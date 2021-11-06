@@ -1,0 +1,24 @@
+#logo{
+	margin-left: 10px;
+	margin-right: auto;
+	
+}
+#menu{
+	padding-bottom: 0px;
+}
+#form{
+	width: 100px;
+
+}
+
+.nav-tabs .nav-link {
+	border-left: 1px solid #0000000f;
+
+}
+
+.fa, .fas { 
+	line-height: 2;
+}
+.fas {
+	padding-right: 2px;
+}

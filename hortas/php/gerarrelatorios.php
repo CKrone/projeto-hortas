@@ -1,0 +1,64 @@
+<?php
+session_start();
+include_once("conexao.php");
+
+$cod_produtor = FILTER_INPUT(INPUT_GET, 'cod_produtor', FILTER_SANITIZE_NUMBER_INT);
+
+
+?>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--Bootstrap 5.1 CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <!--jQuery-->
+    <script src="../jss/jquery-3.6.0.min.js"></script>
+    <!--Arquivos de estilo-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+    <link href="../css/header.css" rel="stylesheet" type="text/css">
+    <!--Bootstrap 5.1 JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script src="../jss/tela.js" type="text/javascript"></script>
+    <title>Editar Dados</title>
+</head>
+
+<body>
+    <nav id="menu" class="navbar navbar-expand-lg navbar-light bg-light">
+        <input type="hidden" value="<?php echo $_SESSION['cod_produtor']; ?>">
+        <ul id="logo" class="nav">
+            <a class="navbar-brand">Painel Produtor</a>
+        </ul>
+        <ul id="logo" class="nav">
+            <a class="navbar-brand"></a>
+        </ul>
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link" href="telaProdutor.php">Página Produtor</a>
+            </li>
+        </ul>
+    </nav>
+    <?php
+    if (isset($_SESSION['msg'])) {
+        echo $_SESSION['msg'];
+        unset($_SESSION['msg']);
+    }
+    ?>
+
+    <?php
+    
+        $result_pedido = "SELECT * FROM pedido where cod_produtor = '$cod_produtor'";
+        $resultado_pedido = mysqli_query($conn, $result_pedido);
+        while ($row_pedido = mysqli_fetch_assoc($resultado_pedido)) {
+            $cod_pedido = $row_pedido['cod_pedido'];
+            echo "Número do Pedido: " . $row_pedido['cod_pedido'] . '<br>';
+            //echo "Pedido: " . $row_pedido['cod_ong']. '<br>';
+            echo "Data Pedido: " . date("d/m/Y", strtotime($row_pedido['data_pedido'])) . '<br>';
+            echo "Data Pedido Entregue " . date("d/m/Y", strtotime($row_pedido['data_entrega'])) . '<br>';
+
+            echo "<a href='listarrelatorio.php?cod_pedido=$row_pedido[cod_pedido]'>Visualizar Relatório</a><br>";
+        }
+    ?>
+</body>
+
+</html>
