@@ -57,6 +57,7 @@ $cod_produtor = FILTER_INPUT(INPUT_GET, 'cod_produtor', FILTER_SANITIZE_NUMBER_I
             echo "Data Pedido Entregue " . date("d/m/Y", strtotime($row_pedido['data_entrega'])) . '<br>';
 
             echo "<a href='listarrelatorio.php?cod_pedido=$row_pedido[cod_pedido]'>Visualizar Relatório</a><br>";
+            echo "<a href='finalziarpedido.php?cod_pedido=$row_pedido[cod_pedido]'>Finalizar Pedido</a><br>";
         }
     ?>
 </body>
