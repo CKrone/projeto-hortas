@@ -66,6 +66,5 @@ $cod_produtor = filter_input(INPUT_GET, 'cod_produtor', FILTER_SANITIZE_NUMBER_I
 			</li>
 		</ul>
 	</nav>
-
 </body>
 </html>
