@@ -3,6 +3,7 @@ require_once("verificalogin.php")
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="utf-8">
 	<meta name="author" content="Cristian Krone, Gabriel Langa e Letícia Caxoeira">
@@ -17,6 +18,7 @@ require_once("verificalogin.php")
 	<link href="../css/header.css" rel="stylesheet" type="text/css">
 	<title>Hortas Comunitárias</title>
 </head>
+
 <body>
 	<nav id="menu" class="navbar navbar-expand-lg navbar-light bg-light">
 		<ul id="logo" class="nav">
@@ -83,10 +85,13 @@ require_once("verificalogin.php")
 		}
 		?>
 	</article>
-
+	
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+	<script src="../jss/bootstrap.bundle.min.js"></script>
 	<script src="../jss/jquery-3.6.0.min.js"></script>
+	<script src="../jss/meumodal.js"></script>
 	<script src="../jss/tela.js"></script>
+
 </body>
 
 </html>

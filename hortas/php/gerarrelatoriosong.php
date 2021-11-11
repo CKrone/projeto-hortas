@@ -1,5 +1,5 @@
 <?php
-session_start();
+require_once("verificaloginong.php");
 include_once("conexao.php");
 
 $cod_produtor = FILTER_INPUT(INPUT_GET, 'cod_produtor', FILTER_SANITIZE_NUMBER_INT);

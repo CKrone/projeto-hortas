@@ -1,5 +1,5 @@
 <?php
-session_start();
+require_once("verificaloginong.php");
 include_once("conexao.php");
 
 $cod_ong = filter_input(INPUT_GET, 'cod_ong', FILTER_SANITIZE_NUMBER_INT);

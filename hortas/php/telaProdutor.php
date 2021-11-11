@@ -52,7 +52,7 @@ $cod_produtor = filter_input(INPUT_GET, 'cod_produtor', FILTER_SANITIZE_NUMBER_I
 			<li class="nav-item dropdown">
 				<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Informar</a>
 				<ul class="dropdown-menu">
-					<li><a class="dropdown-item" onclick="informar()" href="informarHortalicas.php">Informar Hortaliças</a></li>
+					<li><a class="dropdown-item" id="logout_link2" href="#">Informar Hortaliças</a></li>
 					<li><a class="dropdown-item" href="atualizarhortalicas.php">Atualizar Hortaliças</a></li>
 				</ul>
 			</li>
@@ -94,6 +94,26 @@ $cod_produtor = filter_input(INPUT_GET, 'cod_produtor', FILTER_SANITIZE_NUMBER_I
 				<div class="modal-footer">
 					<button type="button" class="btn btn-primary" id="logout_modal_sim">Sim</button>
 					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--Modal para informar sobre atualização de hortaliças!-->
+	<div class="modal fade" id="logout_modal2" tabindex="-1" aria-labelledby="logoutlabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="logoutlabel2">Aviso</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal2" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					Produtor! Caso deseje informar hortaliças que você já doou, clique em "Voltar", vá ao menu "Informar"
+					e selecione a opção "Atualizar Hortaliças" ou clique em "Continuar" para cadastrar novas hortaliças!!
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" id="logout_modal_sim2">Continuar</button>
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Voltar</button>
 				</div>
 			</div>
 		</div>
