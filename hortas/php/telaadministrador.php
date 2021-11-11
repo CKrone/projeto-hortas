@@ -16,6 +16,7 @@ include("verificaloginadm.php");
 	<link href="style.css" rel="stylesheet" type="text/css">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script> 
 	<link rel="stylesheet" type="text/css" href="../css/header.css">
+	<script src="../jss/tela.js"></script>
 	<title>Hortas Comunitárias</title>
 </head>
 <body>
@@ -44,7 +45,7 @@ include("verificaloginadm.php");
 			<li class="nav-item">
 				<ul class="nav nav-tabs">
 					<li class="nav-item">
-						<a class="nav-link"  href="logout.php">Sair</a>
+						<a class="nav-link"  href="#" onclick="sair()">Sair</a>
 					</li>
 					<!--a class="nav-link active" aria-current="page" href="#">Cadastrar</a-->
 				</li>
