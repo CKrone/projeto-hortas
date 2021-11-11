@@ -1,6 +1,6 @@
 <?php
 include_once("conexao.php");
-session_start();
+require_once("verificaloginong.php");
 ?>
 <!DOCTYPE html>
 <html>

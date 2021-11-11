@@ -56,7 +56,7 @@ $cod_ong = filter_input(INPUT_GET, 'cod_ong', FILTER_SANITIZE_NUMBER_INT);
         //echo "Pedido: " . $row_pedido['cod_ong']. '<br>';
         echo "Data Pedido: " . date("d/m/Y", strtotime($row_pedido['data_pedido'])) . '<br>';
         if ($row_pedido['data_entrega'] == null) {
-            echo "Data Pedido Entregue: <strong>Pedido ainda em aberto!</strong><br>";
+            echo "<strong>Pedido ainda em aberto!</strong><br>";
         } else {
             echo "Data Pedido Entregue " . date("d/m/Y", strtotime($row_pedido['data_entrega'])) . '<br>';
         }

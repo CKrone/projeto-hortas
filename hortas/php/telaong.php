@@ -1,5 +1,5 @@
 <?php
-	//session_start();
+
 include("verificaloginong.php");
 $cod_ong = filter_input(INPUT_GET, 'cod_ong', FILTER_SANITIZE_NUMBER_INT);
 ?>
@@ -26,6 +26,7 @@ $cod_ong = filter_input(INPUT_GET, 'cod_ong', FILTER_SANITIZE_NUMBER_INT);
 	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="../jss/java.js">
 	<link rel="stylesheet" type="text/css" href="../css/header.css">
+	<script src="../jss/tela.js"></script>
 	
 	<title>Hortas Comunitárias</title>
 </head>
@@ -66,7 +67,7 @@ $cod_ong = filter_input(INPUT_GET, 'cod_ong', FILTER_SANITIZE_NUMBER_INT);
 				<li class="nav-item">
 					<ul class="nav nav-tabs">
 						<li class="nav-item">
-							<a class="nav-link"  href="logout.php">Sair</a>
+							<a class="nav-link"  href="#" onclick="sair()">Sair</a>
 						</li>
 						<!--a class="nav-link active" aria-current="page" href="#">Cadastrar</a-->
 					</ul>

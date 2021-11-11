@@ -1,10 +1,12 @@
 <?php
+require_once("verificalogin.php");
 include_once("conexao.php");
-session_start();
+
 
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
 	<!--Bootstrap 5.1 CSS-->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
@@ -17,6 +19,7 @@ session_start();
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 	<title>Alterar Senha</title>
 </head>
+
 <body>
 	<nav id="menu" class="navbar navbar-expand-lg navbar-light bg-light">
 		<ul id="logo" class="nav">
@@ -31,26 +34,28 @@ session_start();
 			</li>
 		</ul>
 	</nav>
-	<?php
-	if(isset($_SESSION['msg'])){
-		echo $_SESSION['msg'];
-		unset($_SESSION['msg']);
-	}
-	?>
-
 	<div class="card bg-light">
 		<article class="card-body mx-auto" style="max-width: 400px;">
 			<h4 class="card-title mt-3 text-center">Alterar Senha </h4>
-			
+			<?php
+			if (isset($_SESSION['msg'])) {
+				echo $_SESSION['msg'];
+				unset($_SESSION['msg']);
+			}
+			?>
+
 			<form method="POST" action="processa_alterar_senha_produtor.php">
 				<input type="hidden" name="cod_produtor" value="<?php echo $_SESSION['cod_produtor'] ?>">
 				<div class="form-group input-group">
 					<div class="input-group-prepend">
 						<span class="input-group-text"> <i class="fa fa-lock"></i> </span-->
-						</div>
-						<input  name="senha" type="password" class="form-control" value="" required>
-						<div class="form-group">
-							<button type="submit" class="btn btn-primary btn-block"> Alterar Senha  </button>
-						</div>   
-					</body>
-					</html>
+					</div>
+					<input name="senha" type="password" placeholder="Nova Senha" class="form-control" value="" required>
+				</div>
+				<div class="form-group">
+					<button type="submit" class="btn btn-primary btn-block"> Alterar Senha </button>
+				</div>
+			</form>
+</body>
+
+</html>

@@ -1,5 +1,6 @@
 <?php
-session_start();
+require_once("verificalogin.php");
+
 include_once("conexao.php");
 
 $cod_produtor = FILTER_INPUT(INPUT_GET, 'cod_produtor', FILTER_SANITIZE_NUMBER_INT);
@@ -55,7 +56,7 @@ $cod_produtor = FILTER_INPUT(INPUT_GET, 'cod_produtor', FILTER_SANITIZE_NUMBER_I
         //echo "Pedido: " . $row_pedido['cod_ong']. '<br>';
         echo "Data Pedido: " . date("d/m/Y", strtotime($row_pedido['data_pedido'])) . '<br>';
         if ($row_pedido['data_entrega'] == null) {
-            echo "Data Pedido Entregue: <strong>Pedido ainda em aberto!</strong><br>";
+            echo "<strong>Pedido ainda em aberto!</strong><br>";
             echo "<a href='finalizarpedido.php?cod_pedido=$row_pedido[cod_pedido]'>Finalizar Pedido</a><br>";
         } else {
             echo "Data Pedido Entregue " . date("d/m/Y", strtotime($row_pedido['data_entrega'])) . '<br>';
