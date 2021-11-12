@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="utf-8">
   <meta name="author" content="Cristian Krone, Gabriel Langa e Letícia Caxoeira">
@@ -17,7 +16,9 @@
   <link href="../css/header.css" rel="stylesheet" type="text/css">
   <!--Bootstrap 5.1 JS-->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+  <script src="../jss/tela.js"></script>
   <title>Cadastro de Produtor</title>
+
 </head>
 
 <body>
@@ -59,14 +60,12 @@
         unset($_SESSION['msg']);
       }
       ?>
-
       <form method="POST" action="processa.php">
         <div class="form-group input-group">
           <div class="input-group-prepend">
             <span class="input-group-text"> <i class="fa fa-user"></i> </span>
           </div>
-          <input name="nome" class="form-control" placeholder="Nome Completo" type="text" required>
-
+          <input id="name" name="nome" class="form-control" placeholder="Nome Completo" type="text" required>
         </div> <!-- form-group// -->
         <div class="form-group input-group">
           <div class="input-group-prepend">
@@ -139,7 +138,6 @@
           </div>
       </form>
     </article>
-
 </body>
 
 </html>
