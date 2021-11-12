@@ -1,7 +1,6 @@
 <?php
 include_once("conexao.php");
-session_start();
-
+require_once("verificaloginong.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -18,7 +17,6 @@ session_start();
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 	<title>Alterar Senha</title>
 </head>
-
 <body>
 	<nav id="menu" class="navbar navbar-expand-lg navbar-light bg-light">
 		<ul id="logo" class="nav">
@@ -33,7 +31,6 @@ session_start();
 			</li>
 		</ul>
 	</nav>
-
 	<div class="card bg-light">
 		<article class="card-body mx-auto" style="max-width: 400px;">
 			<?php

@@ -1,6 +1,7 @@
 <?php
+require_once("verificalogin.php");
 include_once("conexao.php");
-session_start();
+
 
 $cod_produtor = filter_input(INPUT_GET, 'cod_produtor', FILTER_SANITIZE_NUMBER_INT);
 $result_endereco = "SELECT * FROM endereco where cod_produtor = '$cod_produtor'";

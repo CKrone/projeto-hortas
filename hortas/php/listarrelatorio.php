@@ -44,30 +44,38 @@ $cod_pedido = filter_input(INPUT_GET, 'cod_pedido', FILTER_SANITIZE_NUMBER_INT);
         unset($_SESSION['msg']);
     }
     ?>
-    <h3>Hortaliças Solicitadas</h3>
+    <h3>Contato da ONG</h3>
     <?php
-    $result_itempedido = "SELECT quantidade, produto.nome, produto.data_colheita, produto.data_vencimento from itempedido inner join produto on itempedido.cod_produto=produto.cod_produto where cod_produtor='$_SESSION[cod_produtor];'";
-    $resultado_item = mysqli_query($conn, $result_itempedido);
-    while ($row_item = mysqli_fetch_assoc($resultado_item)) {
-        echo "Nome:  " .  $row_item['nome'] . '<br>';
-        echo "Data da Colheita:  " .  date('d/m/Y', strtotime($row_item['data_colheita'])) . '<br>';
-        echo "Data do Vecimento:  " .  date('d/m/Y', strtotime($row_item['data_vencimento'])) . '<br>';
-        echo "Quantidade: " . $row_item['quantidade'] . '<br><hr>';
-    }
-
-    $resultado_ong = "SELECT * FROM pedido where cod_produtor='$_SESSION[cod_produtor];'";
+    $resultado_ong = "SELECT * FROM pedido where cod_pedido='$cod_pedido'";
     $resultado = mysqli_query($conn, $resultado_ong);
     while ($row = mysqli_fetch_assoc($resultado)) {
         $cod_ong = $row['cod_ong'];
+        $cod_pedido_ong = $row['cod_pedido'];
+        $data_entrega = $row['data_entrega'];
     }
+
     $resultado_nome = "SELECT * FROM ong where cod_ong = '$cod_ong'";
     $result = mysqli_query($conn, $resultado_nome);
     while ($row_nome = mysqli_fetch_assoc($result)) {
-        echo '<h1>Contato da ONG:</h1>' . '<br>';
+        //echo '<h1>Contato da ONG:</h1>' . '<br>';
         echo 'Razão Social da ONG Solicitante: ' . $row_nome['razaoSocial'] . '<br>';
         echo 'E-mail: ' . $row_nome['email'] . '<br>';
         echo 'Telefone: ' . $row_nome['telefone'] . '<br>';
-        echo 'Celular: ' . $row_nome['celular'] . '<br>';
+        echo 'Celular: ' . $row_nome['celular'] . '<br><hr>';
+    }
+    echo '<br><h4>Hortaliças Solicitadas</h4>';
+    $result_itempedido = "SELECT quantidade, produto.nome, produto.data_colheita, produto.data_vencimento from itempedido inner join produto on itempedido.cod_produto=produto.cod_produto where cod_produtor = '$_SESSION[cod_produtor];' and cod_pedido = '$cod_pedido_ong'";
+    $resultado_item = mysqli_query($conn, $result_itempedido);
+    while ($row_item = mysqli_fetch_assoc($resultado_item)) {
+        if ($row_item['quantidade'] != 0) {
+            echo "Nome:  " .  $row_item['nome'] . '<br>';
+            echo "Data da Colheita:  " .  date('d/m/Y', strtotime($row_item['data_colheita'])) . '<br>';
+            echo "Data do Vecimento:  " .  date('d/m/Y', strtotime($row_item['data_vencimento'])) . '<br>';
+            echo "Quantidade: " . $row_item['quantidade'] . '<br><hr>';
+        }
+    }
+    if ($data_entrega == null){
+    echo "<a href='finalizarpedido.php?cod_pedido=$cod_pedido'>Finalizar Pedido</a><br>";
     }
     ?>
 </body>
