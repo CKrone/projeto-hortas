@@ -5,6 +5,7 @@ include_once("conexao.php");
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
 
 	<!--Bootstrap 5.1 CSS-->
@@ -20,8 +21,9 @@ include_once("conexao.php");
 
 	<title>Editar Produtor</title>
 	<meta charset="utf-8">
-	
+
 </head>
+
 <body>
 	<nav id="menu" class="navbar navbar-expand-lg navbar-light bg-light">
 		<ul id="logo" class="nav">
@@ -34,22 +36,30 @@ include_once("conexao.php");
 		</ul>
 	</nav>
 	<!--a href="listarprodutores.php">Listar</a><br-->
-	<h1>Listar Produtores</h1>
+	<h1>Listar Pedidos</h1>
 	<?php
-	if(isset($_SESSION['msg'])){
+	if (isset($_SESSION['msg'])) {
 		echo $_SESSION['msg'];
 		unset($_SESSION['msg']);
-	}	
-	
-	$result_produtores = "SELECT * FROM produtor";
-	$resultado_produtores = mysqli_query($conn, $result_produtores);
-	while($row_usuario = mysqli_fetch_assoc($resultado_produtores)){
-		echo "ID: " . $row_usuario['cod_produtor'] . "<br>";
-		echo "Nome: " . $row_usuario['nome'] . "<br>";
-		echo "E-mail: " . $row_usuario['email'] . "<br>";
-		echo "<a href='gerenciarprodutores.php?cod_produtor=" . $row_usuario['cod_produtor'] . "'>Editar</a><br><hr>";
-	}			
-	
-	?>		
+	}
+
+	$result_pedido = "SELECT * FROM pedido";
+	$resultado_pedido = mysqli_query($conn, $result_pedido);
+	while ($row_pedido = mysqli_fetch_assoc($resultado_pedido)) {
+		$cod_pedido = $row_pedido['cod_pedido'];
+		$data_entrega = $row_pedido['data_entrega'];
+		echo "Código do Pedido: " . $row_pedido['cod_pedido'] . '<br>';
+		echo "Data do Pedido: " . date('d/m/Y', strtotime($row_pedido['data_pedido'])) . '<br>';
+		if ($data_entrega == null) {
+			echo "<strong>Pedindo ainda está em aberto!</strong><br>";
+		} else {
+			echo "Data de Entrega: " . date('d/m/Y', strtotime($row_pedido['data_entrega'])) . '<br>';
+		}
+		echo "<a href='visualizarpedido.php?cod_pedido=$cod_pedido'>Visualizar Pedido</a><br><hr>";
+	}
+
+
+	?>
 </body>
+
 </html>
