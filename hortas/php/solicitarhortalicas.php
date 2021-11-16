@@ -1,6 +1,6 @@
 <?php
 include_once("conexao.php");
-session_start();
+require_once("verificaloginong.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -49,20 +49,14 @@ session_start();
 		unset($_SESSION['msg']);
 	}
 	?>
-
 	<?php
-
 	$result_produtores = "SELECT produtor.nome, produtor.cod_produtor FROM produtor inner join produto on produtor.cod_produtor=produto.cod_produtor where produto.quantidade_colhida > 0 GROUP BY cod_produtor";
 	$resultado_produtores = mysqli_query($conn, $result_produtores);
 	while ($row_usuario = mysqli_fetch_assoc($resultado_produtores)) {
-		//echo "ID: " . $row_usuario['cod_produtor'] . "<br>";
 		echo "Produtor: " . $row_usuario['nome'] . "<br>";
-		//echo "E-mail: " . $row_usuario['email'] . "<br>";
 		echo "<a href='listarhortalicas.php?cod_produtor=" . $row_usuario['cod_produtor'] . "'>Visualizar Hortaliças</a><br><hr>";
-		//echo "<a href='gerarpedido.php?cod_produtor=" . $row_usuario['cod_produtor'] . "'>Solicitar Hortaliças</a><br><hr>";
 	}
 	?>
-
 </body>
 
 </html>

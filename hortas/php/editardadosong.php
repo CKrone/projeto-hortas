@@ -1,6 +1,6 @@
 	<?php
 	include_once("conexao.php");
-	session_start();
+	require_once("verificaloginong.php");
 
 	$cod_ong = FILTER_INPUT(INPUT_GET, 'cod_ong', FILTER_SANITIZE_NUMBER_INT);
 	$result_ong = "SELECT * FROM ong where cod_ong = '$cod_ong'";
