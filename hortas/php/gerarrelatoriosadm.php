@@ -7,6 +7,11 @@ include_once("conexao.php");
 <html lang="pt-br">
 
 <head>
+	<meta charset="utf-8">
+	<meta name="author" content="Cristian Krone, Gabriel Langa e Letícia Caxoeira">
+	<meta name="description" content="Sistema Web para Hortas Comunitárias">
+	<meta name="keywords" content="hortas comunitarias, bootstrap, javascript">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!--Bootstrap 5.1 CSS-->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">

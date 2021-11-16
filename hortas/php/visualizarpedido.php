@@ -8,7 +8,12 @@ $cod_pedido = filter_input(INPUT_GET, 'cod_pedido', FILTER_SANITIZE_NUMBER_INT);
 <html lang="pt-br">
 
 <head>
-
+    <meta charset="utf-8">
+    <meta name="author" content="Cristian Krone, Gabriel Langa e Letícia Caxoeira">
+    <meta name="description" content="Sistema Web para Hortas Comunitárias">
+    <meta name="keywords" content="hortas comunitarias, bootstrap, javascript">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
     <!--Bootstrap 5.1 CSS-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <!--jQuery-->
@@ -49,7 +54,7 @@ $cod_pedido = filter_input(INPUT_GET, 'cod_pedido', FILTER_SANITIZE_NUMBER_INT);
         $cod_produtor = $row_pedido['cod_produtor'];
         $cod_ong = $row_pedido['cod_ong'];
     }
-
+    echo "<h3> Produtor: </h3>";
     $result_produtores = "SELECT * FROM produtor where cod_produtor = '$cod_produtor'";
     $resultado_produtores = mysqli_query($conn, $result_produtores);
     while ($row_usuario = mysqli_fetch_assoc($resultado_produtores)) {
@@ -58,6 +63,7 @@ $cod_pedido = filter_input(INPUT_GET, 'cod_pedido', FILTER_SANITIZE_NUMBER_INT);
         echo "Telefone: " . $row_usuario['telefone'] . "<br>";
         echo "Celular: " . $row_usuario['celular'] . "<br><hr>";
     }
+    echo "<h3> ONG </h3>";
     $resultado_nome = "SELECT * FROM ong where cod_ong = '$cod_ong'";
     $result = mysqli_query($conn, $resultado_nome);
     while ($row_nome = mysqli_fetch_assoc($result)) {
