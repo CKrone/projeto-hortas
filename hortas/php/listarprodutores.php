@@ -56,7 +56,7 @@ $total_prod = mysqli_num_rows($resultado_produtores);
 			</li>
 		</ul>
 	</nav>
-	<!--a href="listarprodutores.php">Listar</a><br-->
+
 	<h1>Listar Produtores</h1>
 	<?php
 	if (isset($_SESSION['msg'])) {
@@ -69,17 +69,32 @@ $total_prod = mysqli_num_rows($resultado_produtores);
 		echo "E-mail: " . $row_usuario['email'] . "<br>";
 		echo "<a href='gerenciarprodutores.php?cod_produtor=" . $row_usuario['cod_produtor'] . "'>Editar</a><br><hr>";
 	}
-
+	?>
+	<?php
+	//Verificar a pagina anterior e posterior
+	$pagina_anterior = $pagina - 1;
+	$pagina_posterior = $pagina + 1;
 	?>
 	<nav aria-label="Page navigation example">
 		<ul class="pagination justify-content-center">
-			<li class="page-item"><a class="page-link" href="#">Previous</a></li>
+			<li>
+				<?php
+				if ($pagina_anterior != 0) { ?>
+			<li class="page-item"><a class="page-link" href="listarprodutores.php?pagina=<?php echo $pagina_anterior; ?>">Anterior</a></li>
+		<?php } else { ?>
+		<?php }  ?>
+		</li>
+		<?php
+		for ($i = 1; $i < $num_paginas + 1; $i++) { ?>
+			<li class="page-item"><a class="page-link" href="listarprodutores.php?pagina=<?php echo $i; ?>"><?php echo $i;  ?></a></li>
+		<?php }
+		?>
+		<li>
 			<?php
-			for ($i = 1; $i < $num_paginas + 1; $i++) { ?>
-				<li class="page-item"><a class="page-link" href="listarprodutores.php?pagina=<?php echo $i; ?>"><?php echo $i;  ?></a></li>
-			<?php }
-			?>
-
+			if ($pagina_posterior <= $num_paginas) { ?>
+		<li class="page-item"><a class="page-link" href="listarprodutores.php?pagina=<?php echo $pagina_posterior; ?>">Próxima</a></li>
+	<?php } else { ?>
+	<?php }  ?>
 		</ul>
 	</nav>
 
