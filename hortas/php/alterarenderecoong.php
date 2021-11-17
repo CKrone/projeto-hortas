@@ -1,6 +1,6 @@
 <?php
 include_once("conexao.php");
-session_start();
+require_once("verificaloginong.php");
 
 $cod_ong = FILTER_INPUT(INPUT_GET, 'cod_ong', FILTER_SANITIZE_NUMBER_INT);
 $result_endereco = "SELECT * FROM endereco where cod_ong = '$cod_ong'";
@@ -22,7 +22,6 @@ $row_endereco = mysqli_fetch_assoc($resultado_endereco);
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 	<title>Alterar Endereco</title>
 </head>
-
 <body>
 	<nav id="menu" class="navbar navbar-expand-lg navbar-light bg-light">
 		<ul id="logo" class="nav">
@@ -80,5 +79,4 @@ $row_endereco = mysqli_fetch_assoc($resultado_endereco);
 				</div>
 				<button type="submit" class="btn btn-primary btn-block"> Alterar Endereço </button>
 </body>
-
 </html>
