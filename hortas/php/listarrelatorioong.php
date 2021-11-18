@@ -1,5 +1,5 @@
 <?php
-session_start();
+require_once("verificaloginong.php");
 include_once("conexao.php");
 
 $cod_ong = filter_input(INPUT_GET, 'cod_ong', FILTER_SANITIZE_NUMBER_INT);
@@ -52,6 +52,7 @@ $cod_pedido = filter_input(INPUT_GET, 'cod_pedido', FILTER_SANITIZE_NUMBER_INT);
     $resultado = mysqli_query($conn, $resultado_ong);
     while ($row = mysqli_fetch_assoc($resultado)) {
         $cod_produtor = $row['cod_produtor'];
+        $cod_pedido_ong = $row['cod_pedido'];
     }
     $resultado_nome = "SELECT * FROM produtor where cod_produtor = '$cod_produtor'";
     $result = mysqli_query($conn, $resultado_nome);
@@ -64,14 +65,16 @@ $cod_pedido = filter_input(INPUT_GET, 'cod_pedido', FILTER_SANITIZE_NUMBER_INT);
     }
 
     echo '<h3>Hortaliças Solicitadas</h3>';
-    $result_itempedido = "SELECT quantidade, produto.nome, produto.data_colheita, produto.data_vencimento from itempedido inner join produto on itempedido.cod_produto=produto.cod_produto where cod_produtor='$cod_produtor'";
+    $result_itempedido = "SELECT quantidade, produto.nome, produto.data_colheita, produto.data_vencimento from itempedido inner join produto on itempedido.cod_produto=produto.cod_produto where cod_produtor='$cod_produtor' and cod_pedido = '$cod_pedido_ong'";
     $resultado_item = mysqli_query($conn, $result_itempedido);
     while ($row_item = mysqli_fetch_assoc($resultado_item)) {
+        if ($row_item['quantidade'] != 0){
         echo "Nome:  " .  $row_item['nome'] . '<br>';
         echo "Data da Colheita:  " .  date('d/m/Y', strtotime($row_item['data_colheita'])) . '<br>';
         echo "Data do Vecimento:  " .  date('d/m/Y', strtotime($row_item['data_vencimento'])) . '<br>';
         echo "Quantidade: " . $row_item['quantidade'] . '<br><hr>';
     }
+}
     ?>
 </body>
 
