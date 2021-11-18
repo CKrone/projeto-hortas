@@ -1,15 +1,45 @@
-
-function sair() {
-    var res = confirm("Deseja realmente Sair?");
-    if (res == true) {
-        location = "logout.php";
-    } else {
-
+function ApenasLetras(e, t) {
+    try {
+        if (window.event) {
+            var charCode = window.event.keyCode;
+        } else if (e) {
+            var charCode = e.which;
+        } else {
+            return true;
+        }
+        if (
+            (charCode > 64 && charCode < 91) || 
+            (charCode > 96 && charCode < 123) ||
+            (charCode > 191 && charCode <= 255) || // letras com acentos
+            (charCode == 32)
+        ){
+            return true;
+        } else {
+            return false;
+        }
+    } catch (err) {
+        alert(err.Description);
     }
 }
 
-function informar() {
-    alert('Caso deseje doar hortaliças já cadastradas, vá ao menu Informar e escolha a opção Atualizar Hortaliças!!');
-    Location: '../php/atualizarhortalicas.php'; 
+function ApenasNumeros(e, t) {
+    try {
+        if (window.event) {
+            var charCode = window.event.keyCode;
+        } else if (e) {
+            var charCode = e.which;
+        } else {
+            return true;
+        }
+        if (
+            (charCode >= 48 && charCode <= 57)
+        ){
+            return true;
+        } else {
+            return false;
+        }
+    } catch (err) {
+        alert(err.Description);
+    }
 }
 
