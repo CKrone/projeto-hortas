@@ -35,9 +35,9 @@
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Login de Usuários</a>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="./php/login.php">Login de Produtor</a></li>
-          <li><a class="dropdown-item" href="./php/loginong.php">Login da ONG</a></li>
-          <li><a class="dropdown-item" href="./php/loginadm.php">Acesso do Administrador</a></li>
+          <li><a class="dropdown-item" href="login.php">Login de Produtor</a></li>
+          <li><a class="dropdown-item" href="loginong.php">Login da ONG</a></li>
+          <li><a class="dropdown-item" href="loginadm.php">Acesso do Administrador</a></li>
         </ul>
       </li>
     </ul>
@@ -137,5 +137,4 @@
     <script src="../jss/jquery-3.6.0.min.js"></script>
     <script src="../jss/tela.js"></script>
 </body>
-
 </html>

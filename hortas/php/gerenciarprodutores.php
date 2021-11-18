@@ -21,15 +21,10 @@ $row_endereco = mysqli_fetch_assoc($resultado_endereco);
 	<meta name="keywords" content="hortas comunitarias, bootstrap, javascript">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<!--Bootstrap 5.1 CSS-->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-	<!--jQuery-->
-	<script src="../jss/jquery-3.6.0.min.js"></script>
-	<!--Arquivos de estilo-->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
 	<link href="../css/header.css" rel="stylesheet" type="text/css">
-	<!--Bootstrap 5.1 JS-->
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
 	<title>Editar Produtor</title>
 </head>
 
@@ -50,16 +45,16 @@ $row_endereco = mysqli_fetch_assoc($resultado_endereco);
 			</li>
 		</ul>
 	</nav>
-	<?php
-	if (isset($_SESSION['msg'])) {
-		echo $_SESSION['msg'];
-		unset($_SESSION['msg']);
-	}
-	?>
 
 	<div class="card bg-light">
 		<article class="card-body mx-auto" style="max-width: 400px;">
 			<h4 class="card-title mt-3 text-center">Editar Produtor </h4>
+			<?php
+			if (isset($_SESSION['msg'])) {
+				echo $_SESSION['msg'];
+				unset($_SESSION['msg']);
+			}
+			?>
 
 			<form method="POST" action="processa_edit_produtor.php">
 				<div class="form-group input-group">
@@ -72,14 +67,14 @@ $row_endereco = mysqli_fetch_assoc($resultado_endereco);
 						<div class="input-group-prepend">
 							<span class="input-group-text"> <i class="fa fa-user"></i> </span>
 						</div>
-						<input name="nome" class="form-control" value="<?php echo $row_produtor['nome']; ?>" placeholder="Nome Completo" type="text">
+						<input name="nome" class="form-control" value="<?php echo $row_produtor['nome']; ?>" placeholder="Nome Completo" type="text" onkeypress="return ApenasLetras(event,this);">
 
-					</div> <!-- form-group// -->
+					</div>
 					<div class="form-group input-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"> <i class="fa fa-id-card"></i> </span>
 						</div>
-						<input name="cpf" class="form-control" value="<?php echo $row_produtor['cpf']; ?>">
+						<input name="cpf" class="form-control" value="<?php echo $row_produtor['cpf']; ?>" onkeypress="return ApenasNumeros(event,this);">
 					</div>
 					<div class="form-group input-group">
 						<div class="input-group-prepend">
@@ -91,13 +86,13 @@ $row_endereco = mysqli_fetch_assoc($resultado_endereco);
 						<div class="input-group-prepend">
 							<span class="input-group-text"> <i class="fa fa-phone"></i> </span>
 						</div>
-						<input name="telefone" class="form-control" value="<?php echo $row_produtor['telefone']; ?>" placeholder="Telefone" type="text">
+						<input name="telefone" class="form-control" value="<?php echo $row_produtor['telefone']; ?>" placeholder="Telefone" type="text" onkeypress="return ApenasNumeros(event,this);">
 					</div>
 					<div class="form-group input-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"> <i class="fa fa-phone"></i> </span>
 						</div>
-						<input name="celular" class="form-control" value="<?php echo $row_produtor['celular']; ?>" placeholder="Celular" type="text">
+						<input name="celular" class="form-control" value="<?php echo $row_produtor['celular']; ?>" placeholder="Celular" type="text" onkeypress="return ApenasNumeros(event,this);">
 					</div>
 				</div>
 				<div class="form-group">
@@ -107,6 +102,9 @@ $row_endereco = mysqli_fetch_assoc($resultado_endereco);
 		</article>
 	</div>
 
-	
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+	<script src="../jss/jquery-3.6.0.min.js"></script>
+	<script src="../jss/tela.js"></script>
 </body>
+
 </html>

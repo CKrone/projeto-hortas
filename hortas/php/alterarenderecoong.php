@@ -11,17 +11,21 @@ $row_endereco = mysqli_fetch_assoc($resultado_endereco);
 <html>
 
 <head>
-	<!--Bootstrap 5.1 CSS-->
+	<meta charset="utf-8">
+	<meta name="author" content="Cristian Krone, Gabriel Langa e Letícia Caxoeira">
+	<meta name="description" content="Sistema Web para Hortas Comunitárias">
+	<meta name="keywords" content="hortas comunitarias, bootstrap, javascript">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-	<!--jQuery-->
-	<script src="../jss/jquery-3.6.0.min.js"></script>
-	<!--Arquivos de estilo-->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
 	<link href="../css/header.css" rel="stylesheet" type="text/css">
-	<!--Bootstrap 5.1 JS-->
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+
 	<title>Alterar Endereco</title>
 </head>
+
 <body>
 	<nav id="menu" class="navbar navbar-expand-lg navbar-light bg-light">
 		<ul id="logo" class="nav">
@@ -63,20 +67,25 @@ $row_endereco = mysqli_fetch_assoc($resultado_endereco);
 					<div class="input-group-prepend">
 						<span class="input-group-text"> <i class="fas fa-map-marker-alt"></i> </span>
 					</div>
-					<input name="numero" value="<?php echo $row_endereco['numero']; ?>" class="form-control" placeholder="Número" type="text" required>
+					<input name="numero" value="<?php echo $row_endereco['numero']; ?>" class="form-control" placeholder="Número" type="text" onkeypress="return ApenasNumeros(event,this);" required>
 				</div> <!-- form-group// -->
 				<div class="form-group input-group">
 					<div class="input-group-prepend">
 						<span class="input-group-text"> <i class="fas fa-map-marker-alt"></i> </span>
 					</div>
-					<input name="cep" value="<?php echo $row_endereco['cep']; ?>" class="form-control" placeholder="CEP" type="text" required>
+					<input name="cep" value="<?php echo $row_endereco['cep']; ?>" class="form-control" placeholder="CEP" type="text" onkeypress="return ApenasNumeros(event,this);" required>
 				</div>
 				<div class="form-group input-group">
 					<div class="input-group-prepend">
 						<span class="input-group-text"> <i class="fas fa-map-marker-alt"></i> </span>
 					</div>
-					<input name="cidade" value="<?php echo $row_endereco['cidade']; ?>" class="form-control" placeholder="Cidade" type="text" required>
+					<input name="cidade" value="<?php echo $row_endereco['cidade']; ?>" class="form-control" placeholder="Cidade" type="text" onkeypress="return ApenasLetras(event,this);" required>
 				</div>
 				<button type="submit" class="btn btn-primary btn-block"> Alterar Endereço </button>
+
+				<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+				<script src="../jss/jquery-3.6.0.min.js"></script>
+				<script src="../jss/tela.js"></script>
 </body>
+
 </html>
