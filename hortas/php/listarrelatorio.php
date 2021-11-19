@@ -1,5 +1,5 @@
 <?php
-session_start();
+require_once("verificalogin.php");
 include_once("conexao.php");
 
 $cod_produtor = FILTER_INPUT(INPUT_GET, 'cod_produtor', FILTER_SANITIZE_NUMBER_INT);
@@ -10,16 +10,16 @@ $cod_pedido = filter_input(INPUT_GET, 'cod_pedido', FILTER_SANITIZE_NUMBER_INT);
 <html>
 
 <head>
-    <!--Bootstrap 5.1 CSS-->
+    <meta charset="utf-8">
+    <meta name="author" content="Cristian Krone, Gabriel Langa e Letícia Caxoeira">
+    <meta name="description" content="Sistema Web para Hortas Comunitárias">
+    <meta name="keywords" content="hortas comunitarias, bootstrap, javascript">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <!--jQuery-->
-    <script src="../jss/jquery-3.6.0.min.js"></script>
-    <!--Arquivos de estilo-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
     <link href="../css/header.css" rel="stylesheet" type="text/css">
-    <!--Bootstrap 5.1 JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
-    <script src="../jss/tela.js" type="text/javascript"></script>
+
     <title>Editar Dados</title>
 </head>
 
@@ -57,7 +57,6 @@ $cod_pedido = filter_input(INPUT_GET, 'cod_pedido', FILTER_SANITIZE_NUMBER_INT);
     $resultado_nome = "SELECT * FROM ong where cod_ong = '$cod_ong'";
     $result = mysqli_query($conn, $resultado_nome);
     while ($row_nome = mysqli_fetch_assoc($result)) {
-        //echo '<h1>Contato da ONG:</h1>' . '<br>';
         echo 'Razão Social da ONG Solicitante: ' . $row_nome['razaoSocial'] . '<br>';
         echo 'E-mail: ' . $row_nome['email'] . '<br>';
         echo 'Telefone: ' . $row_nome['telefone'] . '<br>';
@@ -74,10 +73,31 @@ $cod_pedido = filter_input(INPUT_GET, 'cod_pedido', FILTER_SANITIZE_NUMBER_INT);
             echo "Quantidade: " . $row_item['quantidade'] . '<br><hr>';
         }
     }
-    if ($data_entrega == null){
-    echo "<a href='finalizarpedido.php?cod_pedido=$cod_pedido'>Finalizar Pedido</a><br>";
+    if ($data_entrega == null) {
+        echo "<button type='submit' class='btn btn-primary btn-block' id='finalizar_pedido' >Finalizar Pedido </button>";
     }
     ?>
-</body>
+    <div class="modal fade" id="finaliza_pedido" tabindex="-1" aria-labelledby="logoutlabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="finalizamodal">Pergunta</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Deseja realmente finalizar o pedido?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="finaliza_modal_sim">Sim</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script src="../jss/tela.js" type="text/javascript"></script>
+    <script src="../jss/jquery-3.6.0.min.js"></script>
+    <script src="../jss/meumodal.js"></script>
+</body>
 </html>

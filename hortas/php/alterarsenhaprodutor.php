@@ -8,15 +8,17 @@ include_once("conexao.php");
 <html>
 
 <head>
-	<!--Bootstrap 5.1 CSS-->
+	<meta charset="utf-8">
+	<meta name="author" content="Cristian Krone, Gabriel Langa e Letícia Caxoeira">
+	<meta name="description" content="Sistema Web para Hortas Comunitárias">
+	<meta name="keywords" content="hortas comunitarias, bootstrap, javascript">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-	<!--jQuery-->
-	<script src="../jss/jquery-3.6.0.min.js"></script>
-	<!--Arquivos de estilo-->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
 	<link href="../css/header.css" rel="stylesheet" type="text/css">
-	<!--Bootstrap 5.1 JS-->
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+
 	<title>Alterar Senha</title>
 </head>
 
@@ -56,6 +58,8 @@ include_once("conexao.php");
 					<button type="submit" class="btn btn-primary btn-block"> Alterar Senha </button>
 				</div>
 			</form>
+			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+			<script src="../jss/jquery-3.6.0.min.js"></script>
 </body>
 
 </html>

@@ -61,7 +61,7 @@
             <span class="input-group-text"> <i class="fa fa-user"></i> </span>
           </div>
           <input id="name" name="nome" class="form-control" placeholder="Nome Completo" type="text" onkeypress="return ApenasLetras(event,this);" required>
-        </div> <!-- form-group// -->
+        </div> 
         <div class="form-group input-group">
           <div class="input-group-prepend">
             <span class="input-group-text"> <i class="fa fa-id-card"></i> </span>
@@ -73,7 +73,7 @@
             <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
           </div>
           <input name="email" class="form-control" placeholder="E-mail " type="email" required>
-        </div> <!-- form-group// -->
+        </div>
         <div class="form-group input-group">
           <div class="input-group-prepend">
             <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
