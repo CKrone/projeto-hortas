@@ -14,7 +14,7 @@ $resultado_ong = mysqli_query($conn, $result_ong);
 
 if(mysqli_affected_rows($conn)){
 	$_SESSION['msg'] = "<p style='color: green;'>Usuário editado com sucesso</p>";
-	header("Location: listarong.php");
+	header("Location: gerenciarong.php?cod_ong=$cod_ong");
 } else {
 	$_SESSION['msg'] = "<p style='color:red;'>Usuário não foi editado </p>";
 	header("Location: gerenciarong.php?cod_ong=$cod_ong");
