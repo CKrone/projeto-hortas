@@ -5,17 +5,21 @@
 
 	<!DOCTYPE html>
 	<html>
+
 	<head>
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">	   
+		<meta charset="utf-8">
+		<meta name="author" content="Cristian Krone, Gabriel Langa e Letícia Caxoeira">
+		<meta name="description" content="Sistema Web para Hortas Comunitárias">
+		<meta name="keywords" content="hortas comunitarias, bootstrap, javascript">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 		<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-		<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-		<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-		<script src="http://mymaplist.com/js/vendor/TweenLite.min.js"></script>
 		<link href="style.css" rel="stylesheet" type="text/css">
-		
 		<link rel="stylesheet" type="text/css" href="../css/header.css">
-		
+
 	</head>
+
 	<body>
 		<nav id="menu" class="navbar navbar-expand-lg navbar-light bg-light">
 			<ul id="logo" class="nav">
@@ -36,12 +40,12 @@
 						</div>
 
 						<?php
-						if(isset($_SESSION['nao_autenticado'])):
-							?>
+						if (isset($_SESSION['nao_autenticado'])) :
+						?>
 							<div class="notification is-danger">
 								<p>ERRO: Usuário ou senha inválidos</p>
 							</div>
-							<?php
+						<?php
 						endif;
 						unset($_SESSION['nao_autenticado']);
 						?>
@@ -55,7 +59,7 @@
 										<input class="form-control" placeholder="Senha" name="senha" type="password" value="">
 									</div>
 									<input class="btn btn-lg btn-success btn-block" type="submit" value="Entrar">
-									
+
 								</fieldset>
 							</form>
 						</div>
@@ -63,12 +67,9 @@
 				</div>
 			</div>
 		</div>
-		
+		<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+		<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+		<script src="http://mymaplist.com/js/vendor/TweenLite.min.js"></script>
 	</body>
+
 	</html>
-
-
-
-
-
-
