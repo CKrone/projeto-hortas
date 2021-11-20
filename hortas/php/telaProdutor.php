@@ -70,13 +70,13 @@ $cod_produtor = filter_input(INPUT_GET, 'cod_produtor', FILTER_SANITIZE_NUMBER_I
 	while ($row = mysqli_fetch_assoc($resultado_pedido)) {
 		$cod_pedido = $row['cod_pedido'];
 		$data_entrega = $row['data_entrega'];
+		if ($data_entrega == null ){
+			echo "<br><h4><strong>Existe uma solicitação em aberto! Veja no menu relatórios! Ou  
+			<a href='gerarrelatorios.php?cod_produtor=$_SESSION[cod_produtor];'>Clique Aqui</a><br></strong></h4>";
+		}
+
 	}
-	if ($data_entrega != null) {
-		echo "<br><h4><strong>Existe uma solicitação em aberto! Veja no menu relatórios! Ou  
-		<a href='gerarrelatorios.php?cod_produtor=$_SESSION[cod_produtor];'>Clique Aqui</a><br></strong></h4>";
-	} else {
-		echo "<br><h4><strong>Não existe solicitação de hortaliças em aberto!</strong></h4>";
-	}
+	
 	?>
 	<div class="modal fade" id="logout_modal" tabindex="-1" aria-labelledby="logoutlabel" aria-hidden="true">
 		<div class="modal-dialog">
