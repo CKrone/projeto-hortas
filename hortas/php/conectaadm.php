@@ -11,7 +11,7 @@ $email = mysqli_real_escape_string($conn, $_POST['email']);
 $senha = mysqli_real_escape_string($conn, $_POST['senha']);
 
 	//Consultar tabela do banco de dados para buscar os dados das variáveis.
-$query = "select * from usuario where email = '{$email}' and senha = md5('{$senha}')";
+$query = "SELECT * FROM administrador where email = '{$email}' and senha = md5('{$senha}')";
 
 	//Estabelecer a conexão da variável de consultar com o banco.
 $result = mysqli_query($conn, $query);
