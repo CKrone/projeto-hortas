@@ -16,6 +16,7 @@ require_once("verificalogin.php")
 	<!--Arquivos de estilo-->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
 	<link href="../css/header.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="../css/select.css" type="text/css">
 	<title>Hortas Comunitárias</title>
 </head>
 
@@ -45,7 +46,7 @@ require_once("verificalogin.php")
 				<div class="input-group-prepend">
 					<span class="input-group-text"> <i class="fas fa-leaf"></i> </span>
 				</div>
-				<input name="nome" class="form-control" placeholder="Produto" type="text" required>
+				<input name="nome" class="form-control" placeholder="Produto" type="text" onkeypress="return ApenasLetras(event,this);" required>
 			</div>
 			<div>
 				<h6>Informe a data de colheita do produto</h6>
@@ -72,11 +73,19 @@ require_once("verificalogin.php")
 				<div class="input-group-prepend">
 					<span class="input-group-text"> <i class="fas fa-plus"></i> </span>
 				</div>
-				<input name="quantidade" class="form-control" placeholder="Quantidade" type="text" required>
+				<input name="quantidade" class="form-control" placeholder="Quantidade" type="text" onkeypress="return ApenasNumeros(event,this);" required>
+				<select name="unidade" class="form-select" aria-label="Default select example"  required>
+					<option selected value="">Selecione a unidade</option>
+					<option value="KG">KG</option>
+					<option value="Unidades">Unidades</option>
+					<option value="Maço">Maço</option>
+				</select>
 			</div>
+
+			<br>
 			<div class="form-group">
 				<button type="submit" class="btn btn-primary btn-block">Cadastrar Hortaliça</button>
-			</div> <!-- form-group// -->
+			</div>
 		</form>
 		<?php
 		if (isset($_SESSION['msg'])) {
@@ -85,7 +94,8 @@ require_once("verificalogin.php")
 		}
 		?>
 	</article>
-	
+
+
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 	<script src="../jss/bootstrap.bundle.min.js"></script>
 	<script src="../jss/jquery-3.6.0.min.js"></script>

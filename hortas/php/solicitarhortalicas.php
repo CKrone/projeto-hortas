@@ -20,7 +20,7 @@ $num_paginas = ceil($total / $quantidade_pg);
 $inicio = ($quantidade_pg * $pagina) - $quantidade_pg;
 
 //Selecionar os produtores a serem exibidos
-$result_prod = "SELECT produtor.nome, produtor.cod_produtor FROM produtor inner join produto on produtor.cod_produtor=produto.cod_produtor where produto.quantidade_colhida > 0 GROUP BY cod_produtor limit $inicio, $quantidade_pg";
+$result_prod = "SELECT produtor.nome, produtor.cod_produtor FROM produtor inner join produto on produtor.cod_produtor=produto.cod_produtor where produto.quantidade_colhida > 0 GROUP BY cod_produtor ORDER BY nome ASC limit $inicio, $quantidade_pg";
 $resultado_produtores = mysqli_query($conn, $result_prod);
 $total_produtores = mysqli_num_rows($resultado_produtores);
 
@@ -69,7 +69,7 @@ $total_produtores = mysqli_num_rows($resultado_produtores);
 	//$resultado_produtores = mysqli_query($conn, $result_produtores);
 	while ($row_usuario = mysqli_fetch_assoc($resultado_produtores)) {
 		echo "Produtor: " . $row_usuario['nome'] . "<br>";
-		echo "<a href='listarhortalicas.php?cod_produtor=" . $row_usuario['cod_produtor'] . "'>Visualizar Hortaliças</a><br><hr>";
+		echo "<a href='listarhortalicas.php?cod_produtor=" . $row_usuario['cod_produtor'] ."&cod_ong=$_SESSION[cod_ong]'>Visualizar Hortaliças</a><br><hr>";
 	}
 	?>
 	<?php

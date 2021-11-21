@@ -65,19 +65,22 @@ $cod_produtor = filter_input(INPUT_GET, 'cod_produtor', FILTER_SANITIZE_NUMBER_I
 		</ul>
 	</nav>
 	<?php
+	$contador = 0;
 	$result_pedido = "SELECT cod_pedido, data_entrega FROM pedido where cod_produtor = '$_SESSION[cod_produtor]'";
 	$resultado_pedido = mysqli_query($conn, $result_pedido);
 	while ($row = mysqli_fetch_assoc($resultado_pedido)) {
 		$cod_pedido = $row['cod_pedido'];
 		$data_entrega = $row['data_entrega'];
-		if ($data_entrega == null ){
-			echo "<br><h4><strong>Existe uma solicitação em aberto! Veja no menu relatórios! Ou  
-			<a href='gerarrelatorios.php?cod_produtor=$_SESSION[cod_produtor];'>Clique Aqui</a><br></strong></h4>";
+		if ($data_entrega == null) {
+			$contador++;
 		}
-
 	}
-	
+	if ($contador > 0) {
+		echo "<br><h4><strong>Existe uma solicitação em aberto! Veja no menu relatórios! Ou  
+<a href='gerarrelatorios.php?cod_produtor=$_SESSION[cod_produtor];'>Clique Aqui</a><br></strong></h4>";
+	}
 	?>
+
 	<div class="modal fade" id="logout_modal" tabindex="-1" aria-labelledby="logoutlabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">

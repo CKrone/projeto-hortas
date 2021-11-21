@@ -68,14 +68,14 @@ $cod_pedido = filter_input(INPUT_GET, 'cod_pedido', FILTER_SANITIZE_NUMBER_INT);
         echo 'Celular: ' . $row_nome['celular'] . '<br><hr>';
     }
     echo "<h3> Hortaliças Solicitadas </h3><hr>";
-    $result_itempedido = "SELECT quantidade, produto.nome, produto.data_colheita, produto.data_vencimento from itempedido inner join produto on itempedido.cod_produto=produto.cod_produto where cod_produtor = '$cod_produtor' and cod_pedido = '$cod_pedido'";
+    $result_itempedido = "SELECT quantidade, produto.nome, produto.data_colheita, produto.data_vencimento, produto.unidade from itempedido inner join produto on itempedido.cod_produto=produto.cod_produto where cod_produtor = '$cod_produtor' and cod_pedido = '$cod_pedido'";
     $resultado_item = mysqli_query($conn, $result_itempedido);
     while ($row_item = mysqli_fetch_assoc($resultado_item)) {
         if ($row_item['quantidade'] != 0) {
             echo "Nome:  " .  $row_item['nome'] . '<br>';
             echo "Data da Colheita:  " .  date('d/m/Y', strtotime($row_item['data_colheita'])) . '<br>';
             echo "Data do Vecimento:  " .  date('d/m/Y', strtotime($row_item['data_vencimento'])) . '<br>';
-            echo "Quantidade: " . $row_item['quantidade'] . '<br><hr>';
+            echo "Quantidade: " . $row_item['quantidade'] . " " . $row_item['unidade'] . '<br><hr>';
         }
     }
 
