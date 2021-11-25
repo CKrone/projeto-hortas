@@ -1,40 +1,26 @@
 <?php
 include("conexao.php");
-session_start();
-
-$cod_produtor = filter_input(INPUT_GET, 'cod_produtor', FILTER_SANITIZE_NUMBER_INT);
-$result_produto = "SELECT * FROM produto where cod_produtor = '$cod_produtor'";
-$resultado_produto = mysqli_query($conn, $result_produto);
-
-//$cod_ong = filter_input(INPUT_GET, 'cod_ong', FILTER_SANITIZE_NUMBER_INT);
-
-
+require_once("verificaloginong.php");
 ?>
 <!DOCTYPE html>
 <html>
 
 <head>
 	<meta charset="utf-8">
-	<meta name="author" content="Cristian Krone, Gabriel Langa e Letícia Caxoeira">
+	<meta name="author" content="Cristian Krone e Gabriel Langa">
 	<meta name="description" content="Sistema Web para Hortas Comunitárias">
 	<meta name="keywords" content="hortas comunitarias, bootstrap, javascript">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Hortas Comunitárias</title>
 
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-	<link href="style.css" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link href="https://raw.githubusercontent.com/daneden/animate.css/master/animate.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+    <link href="../css/header.css" rel="stylesheet" type="text/css">
 
-	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-	<link rel="stylesheet" type="text/css" href="../jss/java.js">
-	<link rel="stylesheet" type="text/css" href="../css/header.css">
-	<link rel="stylesheet" type="text/css" href="../css/style.css">
 </head>
 
 <body>
-	<input type="hidden" name="cod_ong" value="<?php echo $_SESSION['cod_ong']; ?>">
+	<input type="hidden" name="cod_ong" id="cod_ong" value="<?php echo $_SESSION['cod_ong']; ?>">
 	<nav id="menu" class="navbar navbar-expand-lg navbar-light bg-light">
 		<ul id="logo" class="nav">
 			<a class="navbar-brand">Solicitar Hortaliças </a>
@@ -59,20 +45,43 @@ $resultado_produto = mysqli_query($conn, $result_produto);
 	?>
 	<?php
 
-
+	$cod_produtor = filter_input(INPUT_GET, 'cod_produtor', FILTER_SANITIZE_NUMBER_INT);
+	$result_produto = "SELECT * FROM produto where cod_produtor = '$cod_produtor'";
+	$resultado_produto = mysqli_query($conn, $result_produto);
 	while ($row_produto = mysqli_fetch_assoc($resultado_produto)) {
-		echo "Nome do produto: " . $row_produto['nome'] . "<br>";
-		echo "Data de Colheita: " . date("d/m/Y", strtotime($row_produto['data_colheita'])) . "<br>";
-		echo "Data de Vencimento: " . date("d/m/Y", strtotime($row_produto['data_vencimento'])) . "<br>";
-		echo "Quantidade colhida: " . $row_produto['quantidade_colhida'] . "<br><hr>";
-	
+		$quantidade = $row_produto['quantidade_colhida'];
+		if ($quantidade != 0) {
+			echo "Nome do produto: " . $row_produto['nome'] . "<br>";
+			echo "Data de Colheita: " . date("d/m/Y", strtotime($row_produto['data_colheita'])) . "<br>";
+			echo "Data de Vencimento: " . date("d/m/Y", strtotime($row_produto['data_vencimento'])) . "<br>";
+			echo "Quantidade colhida: " . $row_produto['quantidade_colhida'] . " " . $row_produto['unidade'] ."<br><hr>";
+		}
 	}
-	echo "<a href=gerarpedido.php?cod_produtor=$cod_produtor&cod_ong=$_SESSION[cod_ong];>Solicitar Hortaliças</a><br><hr>";
+	//echo "<a href=gerarpedido.php?cod_produtor=$cod_produtor&cod_ong=$_SESSION[cod_ong];>Solicitar Hortaliças</a><br><hr>";
+	echo "<button type='submit' class='btn btn-primary btn-block' id='solicitar_pedido' >Solicitar Hortaliças </button>";
 	?>
-	
-	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<div class="modal fade" id="solicita_modal" tabindex="-1" aria-labelledby="logoutlabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="solicita_modal">Pergunta</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Deseja realmente solicitar as hortaliças?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="solicitar_modal_sim">Sim</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script src="../jss/tela.js" type="text/javascript"></script>
+    <script src="../jss/jquery-3.6.0.min.js"></script>
+    <script src="../jss/meumodal.js"></script>
 </body>
 
 </html>

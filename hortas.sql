@@ -23,12 +23,14 @@ DROP TABLE IF EXISTS `administrador`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `administrador` (
+  `cod_adm` varchar(45) DEFAULT 'ADMux9',
   `cod_usuario` int NOT NULL AUTO_INCREMENT,
   `email` varchar(45) DEFAULT NULL,
   `senha` varchar(45) DEFAULT NULL,
+  `nome` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`cod_usuario`),
   UNIQUE KEY `email_UNIQUE` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,7 +39,7 @@ CREATE TABLE `administrador` (
 
 LOCK TABLES `administrador` WRITE;
 /*!40000 ALTER TABLE `administrador` DISABLE KEYS */;
-INSERT INTO `administrador` VALUES (23,'hortasadm@hotmail.com','2883da1feccc80284572eb14af49dbf0');
+INSERT INTO `administrador` VALUES ('ADMux9',23,'hortasadm@hotmail.com','2883da1feccc80284572eb14af49dbf0','Cristian'),('ADMux1',25,'fernando@hotmail.com','25d55ad283aa400af464c76d713c07ad','Fernando'),('ADMux5',26,'veldecir@hotmail.com','25d55ad283aa400af464c76d713c07ad','Valdecir'),('ADMux8',27,NULL,NULL,NULL),('ADMux6',28,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `administrador` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -59,8 +61,10 @@ CREATE TABLE `endereco` (
   `cod_ong` int DEFAULT NULL,
   PRIMARY KEY (`cod_endereco`),
   KEY `cod_produtor_idx` (`cod_produtor`),
+  KEY `cod_ong_idx` (`cod_ong`),
+  CONSTRAINT `cod_ong` FOREIGN KEY (`cod_ong`) REFERENCES `ong` (`cod_ong`),
   CONSTRAINT `cod_produtor` FOREIGN KEY (`cod_produtor`) REFERENCES `produtor` (`cod_produtor`)
-) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -69,7 +73,7 @@ CREATE TABLE `endereco` (
 
 LOCK TABLES `endereco` WRITE;
 /*!40000 ALTER TABLE `endereco` DISABLE KEYS */;
-INSERT INTO `endereco` VALUES (1,'Avenida Paulista','Centro','São Paulo','747','89254783',29,NULL),(4,'Francisco de Paula','Chico de Paula','Jaraguá Do Sul','733','89254783',31,NULL),(5,'Abelardo Luiz','Industrial ','São João Do Oeste','431','89247564',34,NULL),(8,'Gumercindo','Centro','Jaraguá Do Sul','110','89253754',NULL,16),(9,'Avenida Passo Fundo','Centro','Jaraguá Do Sul','554','89255785',NULL,17),(10,'Athanasio Rosa','Centro','Guaramirim','744','89254777',35,NULL),(11,'Alfredo','Centro','Jaraguá Do Sul','141','123456789',41,NULL),(12,'Alberto Schneider','Centro','Jaraguá Do Sul','741','892547544',NULL,19),(13,'Ricardo','Amizade','Guaramirim','155','89270000',42,NULL),(22,'Silva ','Centro','Jaraguá Do Sul','447','89254785',51,NULL),(23,'Alfedro','Centro','Jaraguá Do Sul','155','89254789',52,NULL),(24,'Centrão','Amizade','Jaraguá Do Sul','159','892547985',NULL,20),(25,'Pedro Gonçalves','Centro','São Bento Do Sul','7741','89254789',53,NULL),(28,'Athanasio','Centro','Guaramirim','144','89270000',56,NULL),(29,'Avenida José','Centro','Pinhais','633','892874152',NULL,21),(30,'Silva Linhares','Servidão 3','Macapa','897','892547812',NULL,22),(31,'Ricardo Hardt','Centro','Guaramirim ','105','89270000',NULL,23);
+INSERT INTO `endereco` VALUES (1,'Avenida Paulista','Centro','São Paulo','747','89254783',29,NULL),(4,'Francisco de Paula','Chico de Paula','Jaraguá Do Sul','733','89254783',31,NULL),(5,'Abelardo Luiz','Industrial ','São João Do Oeste','431','89247564',34,NULL),(8,'Gumercindo','Centro','Jaraguá Do Sul','110','89253754',NULL,16),(9,'Avenida Passo Fundo','Centro','Jaraguá Do Sul','554','89255785',NULL,17),(10,'Athanasio Rosa','Centro','Guaramirim','744','89254777',35,NULL),(11,'Alfredo','Centro','Jaraguá Do Sul','141','123456789',41,NULL),(12,'Alberto Schneider','Centro','Jaraguá Do Sul','741','892547544',NULL,19),(13,'Ricardo','Amizade','Guaramirim','155','89270000',42,NULL),(22,'Silva ','Centro','Jaraguá Do Sul','447','89254785',51,NULL),(23,'Alfedro','Centro','Jaraguá Do Sul','155','89254789',52,NULL),(24,'Centrão','Amizade','Jaraguá Do Sul','159','892547985',NULL,20),(25,'Pedro Gonçalves','Centro','São Bento Do Sul','7741','89254789',53,NULL),(28,'Athanasio','Centro','Guaramirim','144','89270000',56,NULL),(29,'Avenida José','Centro','Pinhais','633','892874152',NULL,21),(30,'Silva Linhares','Servidão 3','Macapa','897','892547812',NULL,22),(33,'Avenida','Centro','Guaramirim','159','89278000',58,NULL);
 /*!40000 ALTER TABLE `endereco` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -212,7 +216,7 @@ CREATE TABLE `produtor` (
   `celular` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`cod_produtor`),
   UNIQUE KEY `email_UNIQUE` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -221,7 +225,7 @@ CREATE TABLE `produtor` (
 
 LOCK TABLES `produtor` WRITE;
 /*!40000 ALTER TABLE `produtor` DISABLE KEYS */;
-INSERT INTO `produtor` VALUES (29,'José Alvez Silva','01234567810','jose@hotmail.com','33709195','827ccb0eea8a706c4c34a16891f84e7b','99751517'),(31,'Pedro Alves Abreu','09145678495','pedro@hotmail.com','33701433','827ccb0eea8a706c4c34a16891f84e7b','94782231'),(34,'Gustavo Roberto','0123456789','gustavo@hotmail.com','33710202','202cb962ac59075b964b07152d234b70','99741510'),(35,'Alberto Roberto José','0123456789','alberto@hotmail.com','33718416','827ccb0eea8a706c4c34a16891f84e7b','99715589'),(41,'Benjamin Silva Souza','01234567894','benjamin@hotmail.com','33710417','827ccb0eea8a706c4c34a16891f84e7b','99711101'),(42,'Berenício Silva Alberto','01547885201','berenicio@hotmail.com','33719794','827ccb0eea8a706c4c34a16891f84e7b','99746331'),(51,'Izaias Silva Abelardo','01257484590','iza_silva@hotmail.com','33741598','827ccb0eea8a706c4c34a16891f84e7b','99721548'),(52,'Julio Politeico','01478445890','julio@hotmail.com','33714565','827ccb0eea8a706c4c34a16891f84e7b','88741245'),(53,'Paulo Augusto','01478523695','paulo@hotmail.com','33719745','827ccb0eea8a706c4c34a16891f84e7b','99711442'),(56,'Aroldo Silva Pereira','09145874520','aroldo@hotmail.com','33706565','202cb962ac59075b964b07152d234b70','99721313');
+INSERT INTO `produtor` VALUES (29,'José Alvez Silva','012.345.678-10','jose@hotmail.com','33709195','827ccb0eea8a706c4c34a16891f84e7b','99751517'),(31,'Pedro Alves Abreu','091.456.784-95','pedro@hotmail.com','33701433','827ccb0eea8a706c4c34a16891f84e7b','94782231'),(34,'Gustavo Roberto','111.111.111-11','gustavo@hotmail.com','33710202','202cb962ac59075b964b07152d234b70','99741510'),(35,'Alberto Roberto José','222.222.222-22','alberto@hotmail.com','33718416','827ccb0eea8a706c4c34a16891f84e7b','99715589'),(41,'Benjamin Silva Souza','012.345.678-94','benjamin@hotmail.com','33710417','827ccb0eea8a706c4c34a16891f84e7b','99711101'),(42,'Berenício Silva Alberto','015.478.852-01','berenicio@hotmail.com','33719794','827ccb0eea8a706c4c34a16891f84e7b','99746331'),(51,'Izaias Silva Abelardo','012.574.845-90','iza_silva@hotmail.com','33741598','827ccb0eea8a706c4c34a16891f84e7b','99721548'),(52,'Julio Politeico','014.784.458-90','julio@hotmail.com','33714565','827ccb0eea8a706c4c34a16891f84e7b','88741245'),(53,'Paulo Augusto','014.785.236-95','paulo@hotmail.com','33719745','827ccb0eea8a706c4c34a16891f84e7b','99711442'),(56,'Aroldo Silva Pereira','091.458.745-20','aroldo@hotmail.com','33706565','202cb962ac59075b964b07152d234b70','99721313'),(58,'Jubileu','091.458.745-20','jubileu@hotmail.com','33731515','25d55ad283aa400af464c76d713c07ad','89257412'),(60,'TesteCpf','111.111.111-11','TesteCpf@hotmail.com','11111111','25d55ad283aa400af464c76d713c07ad','111111111');
 /*!40000 ALTER TABLE `produtor` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -234,4 +238,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-11-21 18:57:54
+-- Dump completed on 2021-11-25 15:49:27

@@ -1,5 +1,5 @@
 <?php
-session_start();
+require_once("verificaloginong.php");
 include_once("conexao.php");
 
 $cod_ong = filter_input(INPUT_GET, 'cod_ong', FILTER_SANITIZE_NUMBER_INT);
@@ -11,16 +11,17 @@ $cod_pedido = filter_input(INPUT_GET, 'cod_pedido', FILTER_SANITIZE_NUMBER_INT);
 <html>
 
 <head>
-    <!--Bootstrap 5.1 CSS-->
+
+    <meta charset="utf-8">
+    <meta name="author" content="Cristian Krone e Gabriel Langa">
+    <meta name="description" content="Sistema Web para Hortas Comunitárias">
+    <meta name="keywords" content="hortas comunitarias, bootstrap, javascript">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <!--jQuery-->
-    <script src="../jss/jquery-3.6.0.min.js"></script>
-    <!--Arquivos de estilo-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
     <link href="../css/header.css" rel="stylesheet" type="text/css">
-    <!--Bootstrap 5.1 JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
-    <script src="../jss/tela.js" type="text/javascript"></script>
+
     <title>Listar Relatório</title>
 </head>
 
@@ -52,6 +53,7 @@ $cod_pedido = filter_input(INPUT_GET, 'cod_pedido', FILTER_SANITIZE_NUMBER_INT);
     $resultado = mysqli_query($conn, $resultado_ong);
     while ($row = mysqli_fetch_assoc($resultado)) {
         $cod_produtor = $row['cod_produtor'];
+        $cod_pedido_ong = $row['cod_pedido'];
     }
     $resultado_nome = "SELECT * FROM produtor where cod_produtor = '$cod_produtor'";
     $result = mysqli_query($conn, $resultado_nome);
@@ -64,15 +66,20 @@ $cod_pedido = filter_input(INPUT_GET, 'cod_pedido', FILTER_SANITIZE_NUMBER_INT);
     }
 
     echo '<h3>Hortaliças Solicitadas</h3>';
-    $result_itempedido = "SELECT quantidade, produto.nome, produto.data_colheita, produto.data_vencimento from itempedido inner join produto on itempedido.cod_produto=produto.cod_produto where cod_produtor='$cod_produtor'";
+    $result_itempedido = "SELECT quantidade, produto.nome, produto.data_colheita, produto.data_vencimento, produto.unidade from itempedido inner join produto on itempedido.cod_produto=produto.cod_produto where cod_produtor='$cod_produtor' and cod_pedido = '$cod_pedido_ong'";
     $resultado_item = mysqli_query($conn, $result_itempedido);
     while ($row_item = mysqli_fetch_assoc($resultado_item)) {
-        echo "Nome:  " .  $row_item['nome'] . '<br>';
-        echo "Data da Colheita:  " .  date('d/m/Y', strtotime($row_item['data_colheita'])) . '<br>';
-        echo "Data do Vecimento:  " .  date('d/m/Y', strtotime($row_item['data_vencimento'])) . '<br>';
-        echo "Quantidade: " . $row_item['quantidade'] . '<br><hr>';
+        if ($row_item['quantidade'] != 0) {
+            echo "Nome:  " .  $row_item['nome'] . '<br>';
+            echo "Data da Colheita:  " .  date('d/m/Y', strtotime($row_item['data_colheita'])) . '<br>';
+            echo "Data do Vecimento:  " .  date('d/m/Y', strtotime($row_item['data_vencimento'])) . '<br>';
+            echo "Quantidade: " . $row_item['quantidade'] . " " . $row_item['unidade'] . '<br><hr>';
+        }
     }
     ?>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script src="../jss/tela.js" type="text/javascript"></script>
+    <script src="../jss/jquery-3.6.0.min.js"></script>
 </body>
 
 </html>
