@@ -32,7 +32,7 @@ $total_on = mysqli_num_rows($resultado_ong);
 
 <head>
 	<meta charset="utf-8">
-	<meta name="author" content="Cristian Krone, Gabriel Langa e Letícia Caxoeira">
+	<meta name="author" content="Cristian Krone e Gabriel Langa">
 	<meta name="description" content="Sistema Web para Hortas Comunitárias">
 	<meta name="keywords" content="hortas comunitarias, bootstrap, javascript">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -101,6 +101,7 @@ $total_on = mysqli_num_rows($resultado_ong);
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 	<script src="../jss/jquery-3.6.0.min.js"></script>
+	<script src="../jss/jquery.maskedinput-1.1.4.pack.js"></script>
 </body>
 
 </html>

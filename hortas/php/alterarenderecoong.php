@@ -12,7 +12,7 @@ $row_endereco = mysqli_fetch_assoc($resultado_endereco);
 
 <head>
 	<meta charset="utf-8">
-	<meta name="author" content="Cristian Krone, Gabriel Langa e Letícia Caxoeira">
+	<meta name="author" content="Cristian Krone e Gabriel Langa">
 	<meta name="description" content="Sistema Web para Hortas Comunitárias">
 	<meta name="keywords" content="hortas comunitarias, bootstrap, javascript">
 	<meta name="viewport" content="width=device-width, initial-scale=1">

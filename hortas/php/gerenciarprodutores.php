@@ -16,7 +16,7 @@ $row_endereco = mysqli_fetch_assoc($resultado_endereco);
 
 <head>
 	<meta charset="utf-8">
-	<meta name="author" content="Cristian Krone, Gabriel Langa e Letícia Caxoeira">
+	<meta name="author" content="Cristian Krone e Gabriel Langa">
 	<meta name="description" content="Sistema Web para Hortas Comunitárias">
 	<meta name="keywords" content="hortas comunitarias, bootstrap, javascript">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -74,7 +74,7 @@ $row_endereco = mysqli_fetch_assoc($resultado_endereco);
 						<div class="input-group-prepend">
 							<span class="input-group-text"> <i class="fa fa-id-card"></i> </span>
 						</div>
-						<input name="cpf" class="form-control" value="<?php echo $row_produtor['cpf']; ?>" onkeypress="return ApenasNumeros(event,this);">
+						<input name="cpf" class="form-control" id="cpf" value="<?php echo $row_produtor['cpf']; ?>" onkeypress="return ApenasNumeros(event,this);">
 					</div>
 					<div class="form-group input-group">
 						<div class="input-group-prepend">
@@ -105,6 +105,8 @@ $row_endereco = mysqli_fetch_assoc($resultado_endereco);
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 	<script src="../jss/jquery-3.6.0.min.js"></script>
 	<script src="../jss/tela.js"></script>
+	<script src="../jss/jquery-1.2.6.pack.js"></script>
+    <script src="../jss/jquery.maskedinput-1.1.4.pack.js"></script>
 </body>
 
 </html>

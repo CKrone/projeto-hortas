@@ -21,8 +21,7 @@ $row = mysqli_num_rows($result);
 
 	//Condição que aceita a entrada do usuário caso seja existente, ao contrário, volta para página de login.
 
-if(($email == 'hortasadm@hotmail.com') && ($senha == 'admhortas')){
-	
+if($row != 0){	
 	$_SESSION['email'] = $email;
 	header('Location: telaadministrador.php');
 	exit();
