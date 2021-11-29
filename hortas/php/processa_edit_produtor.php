@@ -16,7 +16,7 @@ $resultado_produtor = mysqli_query($conn, $result_produtor);
 
 if(mysqli_affected_rows($conn)){
 	$_SESSION['msg'] = "<p style='color: green;'>Usuário editado com sucesso</p>";
-	header("Location: listarprodutores.php");
+	header("Location: gerenciarprodutores.php?cod_produtor=$cod_produtor");
 } else {
 	$_SESSION['msg'] = "<p style='color:red;'>Usuário não foi editado</p>";
 	header("Location: gerenciarprodutores.php?cod_produtor=$cod_produtor");

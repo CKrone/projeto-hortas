@@ -11,9 +11,10 @@ $datavencimento = filter_input (INPUT_POST, 'datavencimento', FILTER_SANITIZE_ST
 $quantidade = filter_input (INPUT_POST, 'quantidade', FILTER_SANITIZE_STRING);
 $cod_produtor = filter_input(INPUT_POST, 'cod_produtor', FILTER_SANITIZE_NUMBER_INT);
 $cod_produto = filter_input(INPUT_POST,'cod_produto', FILTER_SANITIZE_NUMBER_INT);
+$unidade = filter_input(INPUT_POST, 'unidade', FILTER_SANITIZE_STRING);
 
 //Comando para adicionar os campos na tabela do banco de dados
-$result_produto = "UPDATE produto SET data_colheita = '$datacolheita', data_vencimento = '$datavencimento', quantidade_colhida = '$quantidade'
+$result_produto = "UPDATE produto SET data_colheita = '$datacolheita', data_vencimento = '$datavencimento', quantidade_colhida = '$quantidade', unidade = '$unidade'
 where cod_produto = '$cod_produto'";
 
 //Variável para estabelecer conexão com o comando para adicionar no banco.

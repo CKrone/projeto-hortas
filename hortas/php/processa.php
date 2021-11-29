@@ -17,6 +17,7 @@ $numero = filter_input(INPUT_POST, 'numero', FILTER_SANITIZE_STRING);
 $cep = filter_input(INPUT_POST, 'cep', FILTER_SANITIZE_STRING);
 $cidade = filter_input(INPUT_POST, 'cidade', FILTER_SANITIZE_STRING);
 
+//Conferir se já existe e-mail cadastrado 
 $sql = "SELECT email from produtor where email = '$email'";
 $conecta = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($conecta);
@@ -24,6 +25,39 @@ $row = mysqli_fetch_assoc($conecta);
 $sqlong = "SELECT email from ong where email = '$email'";
 $connecta2 = mysqli_query($conn, $sqlong);
 $row2 = mysqli_fetch_assoc($connecta2);
+
+function validaCPF($cpf) {
+ 
+    // Extrai somente os números
+    $cpf = preg_replace( '/[^0-9]/is', '', $cpf );
+     
+    // Verifica se foi informado todos os digitos corretamente
+    if (strlen($cpf) != 11) {
+        return false;
+    }
+
+    // Verifica se foi informada uma sequência de digitos repetidos. Ex: 111.111.111-11
+    if (preg_match('/(\d)\1{10}/', $cpf)) {
+        return false;
+    }
+
+    // Faz o calculo para validar o CPF
+    for ($t = 9; $t < 11; $t++) {
+        for ($d = 0, $c = 0; $c < $t; $c++) {
+            $d += $cpf[$c] * (($t + 1) - $c);
+        }
+        $d = ((10 * $d) % 11) % 10;
+        if ($cpf[$c] != $d) {
+            return false;
+        }
+    }
+    return true;
+
+}
+if (validaCPF($cpf) == false){
+	$_SESSION['msg'] = "<p style='color: red;'>CPF Inválido!!!</p>";
+	header("Location: cadastroProdutor.php");
+}
 
 if($row != 0 ){	
 	$_SESSION['msg'] = "<p style='color: red;'>Usuário já existente!!!</p>";
@@ -33,7 +67,7 @@ if($row != 0 ){
 	$_SESSION['msg'] = "<p style='color: red;'>Usuário já existente!!!</p>";
 	header("Location: cadastroProdutor.php");
 }
-else {
+else if ($row == 0 && $row2 == 0 && validaCPF($cpf) == true) {
 
 
  //Variáveis para fazer a adição dos dados nas tabelas do banco.
@@ -52,10 +86,9 @@ else {
 
 //Após o cadastro, usuário é redirecionado para página de login
 	header(/*"Location: ../index.html"*/
-		"Location: login.php" 
-	);
+		"Location: login.php");
+	
 }
-
 
 
 
