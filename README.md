@@ -100,8 +100,9 @@ A ideia é minimizar os disperdícios de hortaliças produzidas em excesso nas h
 
   <h3>Usuário ONG -> Tela Solicitar Hortaliças:</h3>
   
-  - A ONG poderá visualizar os produtores disponíveis, que já cadastraram hortaliças para doação;
-  - Escolhendo o produtor desejado, a ONG fará a solicitação das hortaliças.
+  - A ONG poderá visualizar os produtores disponíveis que já cadastraram hortaliças para doação;
+  - Escolhendo o produtor desejado, será exibido as hortaliças e suas informações;
+  - Por fim, a ONG fará a solicitação das hortaliças.
 
 ![Solicitar Hortaliças 2](https://user-images.githubusercontent.com/86797383/144769288-ec2a4288-6b4f-4ca2-929d-9904ea27448c.jpg)
 
