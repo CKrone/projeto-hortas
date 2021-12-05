@@ -15,6 +15,15 @@ A ideia é minimizar os disperdícios de hortaliças produzidas em excesso nas h
 
 Tela inicial do sistema:
 
-- É apresentado as funções iniciais para os usuários, cadastro e login;
+- É apresentado as funções iniciais para os usuários, cadastro e login.
 
 ![Tela Principal](https://user-images.githubusercontent.com/86797383/144767574-672868c8-3ec8-497b-a9c4-7c2bd39528dc.jpg)
+
+
+
+
+Usuário Produtor -> Tela para informar hortaliças para doação:
+
+- O produtor irá informar o tipo de hortaliça que deseja doar, a data que foi feita a colheita, a data estimada para o vencimento da hortaliça e a quantidade, também há a opção de informar a unidade da hortaliça (Unidades, KG, Maço).
+
+![Informar Hortaliças](https://user-images.githubusercontent.com/86797383/144767640-8d15017f-95e7-4700-b24e-981b0468b2e6.jpg)
