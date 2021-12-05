@@ -79,7 +79,7 @@ A ideia é minimizar os disperdícios de hortaliças produzidas em excesso nas h
 
 ![Cadastro ONG](https://user-images.githubusercontent.com/86797383/144768882-7c164616-8b68-48fb-82ce-9956ca4b1f8e.jpg)
 
-<h3>Usuário ONG -> Tela inicial do perfil da ONG:
+<h3>Usuário ONG -> Tela inicial do perfil da ONG:</h3>
   
  - Após o login da ONG, a tela com as funcionalidades do perfil do ONG serão exibidas;
 - Editar dados, onde a ONG poderá editar seus dados, senha e endereço;
@@ -97,6 +97,13 @@ A ideia é minimizar os disperdícios de hortaliças produzidas em excesso nas h
   
   ![Gerar Relatórios ONG](https://user-images.githubusercontent.com/86797383/144769146-0dc2e7d1-f25a-47f1-bd75-e79cd2e33f92.jpg)
 
+
+  <h3>Usuário ONG -> Tela Solicitar Hortaliças:</h3>
+  
+  - A ONG poderá visualizar os produtores disponíveis, que já cadastraram hortaliças para doação;
+  - Escolhendo o produtor desejado, a ONG fará a solicitação das hortaliças.
+
+![Solicitar Hortaliças 2](https://user-images.githubusercontent.com/86797383/144769288-ec2a4288-6b4f-4ca2-929d-9904ea27448c.jpg)
 
 
 
