@@ -13,14 +13,14 @@ A ideia é minimizar os disperdícios de hortaliças produzidas em excesso nas h
 <h1>Telas do site desenvolvido</h1>
 
 
-Tela inicial do sistema:
+<h3>Tela inicial do sistema:</h3>
 
 - É apresentado as funções iniciais para os usuários, cadastro e login.
 
 ![Tela Principal](https://user-images.githubusercontent.com/86797383/144767574-672868c8-3ec8-497b-a9c4-7c2bd39528dc.jpg)
 
 
-Tela de cadastro Produtor:
+<h3>Tela de cadastro Produtor:</h3>
 
 - Informações necessárias para o produtor efetuar o cadastro no sistema; 
 - Todas informações são obrigatórias;
@@ -30,7 +30,7 @@ Tela de cadastro Produtor:
 
 ![Cadastro Produtor](https://user-images.githubusercontent.com/86797383/144767856-246750ce-7983-4a2e-b281-5d952adf6d9d.jpg)
 
-Usuário Produtor -> Tela inicial do perfil Produtor:
+<h3>Usuário Produtor -> Tela inicial do perfil Produtor:</h3>
 
 - Após o login do produtor, a tela com as funcionalidades do perfil do produtor serão exibidas;
 - Um aviso será mostrado caso exista pedidos em aberto;
@@ -40,7 +40,7 @@ Usuário Produtor -> Tela inicial do perfil Produtor:
 
 ![Tela Inicial Produtor](https://user-images.githubusercontent.com/86797383/144767969-3eb06d03-81a8-45be-adc4-76c31398ef0a.jpg)
 
-Usuário Produtor -> Tela para exibir relatórios:
+<h3>Usuário Produtor -> Tela para exibir relatórios:</h3>
 
 - Opção onde o produtor irá selecionar o pedido que deseja visualizar;
 - Caso o pedido esteja em aberto, é exibido a opção de finalizar o pedido após a entrega;
@@ -50,7 +50,7 @@ Usuário Produtor -> Tela para exibir relatórios:
 ![Relatórios Produtor](https://user-images.githubusercontent.com/86797383/144768169-20d1656f-cf0f-4e46-befd-50abfd8fcc87.jpg)
 
 
-Usuário Produtor -> Tela para informar hortaliças para doação:
+<h3>Usuário Produtor -> Tela para informar hortaliças para doação:</h3>
 
 - O produtor irá informar o tipo de hortaliça que deseja doar;
 - A data que foi feita a colheita;
@@ -60,7 +60,7 @@ Usuário Produtor -> Tela para informar hortaliças para doação:
 
 ![Informar Hortaliças](https://user-images.githubusercontent.com/86797383/144767640-8d15017f-95e7-4700-b24e-981b0468b2e6.jpg)
 
-Usuário Produtor -> Tela para atualizar hortaliças:
+<h3>Usuário Produtor -> Tela para atualizar hortaliças:</h3>
 
 - Para não fazer um novo cadastro de uma hortaliça já doada, o produtor apenas seleciona a hortaliça que deseja novamente doar;
 - Atualiza seus dados, data de colheita, vencimento, quantidade e unidade;
