@@ -7,4 +7,14 @@ permitindo que ONGs cadastradas façam a solicitação dessas hortaliças e repa
 
 A ideia é minimizar os disperdícios de hortaliças produzidas em excesso nas hortas comunitárias e ajudar na segurança alimentar da sociedade.
 
+
+
+
+
+
+
+Tela inicial do sistema:
+
+- É apresentado as funções iniciais para os usuários, cadastro e login;
+
 ![Tela Principal](https://user-images.githubusercontent.com/86797383/144767574-672868c8-3ec8-497b-a9c4-7c2bd39528dc.jpg)
