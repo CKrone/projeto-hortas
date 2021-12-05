@@ -43,13 +43,19 @@ Usuário Produtor -> Tela inicial do perfil Produtor:
 Usuário Produtor -> Tela para exibir relatórios:
 
 - Opção onde o produtor irá selecionar o pedido que deseja visualizar;
-- Caso o pedido esteja em aberto, é exibido a opção de finalizar o pedido após a entrega.
+- Caso o pedido esteja em aberto, é exibido a opção de finalizar o pedido após a entrega;
+- O relatório mostra os dados da ONG solicitante para o contato;
+- Será exibido também o endereço da ONG para a entrega.
 
 ![Relatórios Produtor](https://user-images.githubusercontent.com/86797383/144768169-20d1656f-cf0f-4e46-befd-50abfd8fcc87.jpg)
 
 
 Usuário Produtor -> Tela para informar hortaliças para doação:
 
-- O produtor irá informar o tipo de hortaliça que deseja doar, a data que foi feita a colheita, a data estimada para o vencimento da hortaliça e a quantidade, também há a opção de informar a unidade da hortaliça (Unidades, KG, Maço).
+- O produtor irá informar o tipo de hortaliça que deseja doar;
+- A data que foi feita a colheita;
+- A data estimada para o vencimento da hortaliça; 
+- A quantidade; 
+- Informar a unidade da hortaliça (Unidades, KG, Maço).
 
 ![Informar Hortaliças](https://user-images.githubusercontent.com/86797383/144767640-8d15017f-95e7-4700-b24e-981b0468b2e6.jpg)
