@@ -33,11 +33,19 @@ Tela de cadastro Produtor:
 Usuário Produtor -> Tela inicial do perfil Produtor:
 
 - Após o login do produtor, a tela com as funcionalidades do perfil do produtor serão exibidas;
+- Um aviso será mostrado caso exista pedidos em aberto;
 - Editar dados, onde produtor poderá editar seus dados, senha e endereço;
 - Gerar relatórios, onde será exibido os relatórios em aberto e/ou finalizados;
 - Informar hortaliças, onde produtor cadastrará as hortaliças e a opção atualizar hortaliças.  
 
 ![Tela Inicial Produtor](https://user-images.githubusercontent.com/86797383/144767969-3eb06d03-81a8-45be-adc4-76c31398ef0a.jpg)
+
+Usuário Produtor -> Tela para exibir relatórios:
+
+- Opção onde o produtor irá selecionar o pedido que deseja visualizar;
+- Caso o pedido esteja em aberto, é exibido a opção de finalizar o pedido após a entrega.
+
+![Relatórios Produtor](https://user-images.githubusercontent.com/86797383/144768169-20d1656f-cf0f-4e46-befd-50abfd8fcc87.jpg)
 
 
 Usuário Produtor -> Tela para informar hortaliças para doação:
