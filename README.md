@@ -68,3 +68,35 @@ A ideia é minimizar os disperdícios de hortaliças produzidas em excesso nas h
 
 ![Atualizar Hortaliças](https://user-images.githubusercontent.com/86797383/144768396-eceb2d65-827a-404e-b3ed-27489a489084.jpg)
 
+
+<h3>Tela de cadastro da ONG</h3>
+
+- Informações necessárias para a ONG efetuar o cadastro no sistema; 
+- Todas informações são obrigatórias;
+- Verificação do CNPJ;
+- Como login será utilizado o E-mail;
+- Os campos possuem restrição de digitação (Apenas números ou apenas letras).
+
+![Cadastro ONG](https://user-images.githubusercontent.com/86797383/144768882-7c164616-8b68-48fb-82ce-9956ca4b1f8e.jpg)
+
+<h3>Usuário ONG -> Tela inicial do perfil da ONG:
+  
+ - Após o login da ONG, a tela com as funcionalidades do perfil do ONG serão exibidas;
+- Editar dados, onde a ONG poderá editar seus dados, senha e endereço;
+- Gerar relatórios, onde será exibido os relatórios em aberto e/ou finalizados;
+- Solicitar hortaliças, onde a ONG poderá visualizar os produtores e suas hortaliças.
+  
+  ![Tela Inicial ONG](https://user-images.githubusercontent.com/86797383/144769007-1205ddca-e747-4466-89bc-3ebc8ab7b9d1.jpg)
+  
+  <h3>Usuário ONG -> Tela para exibir relatórios:</h3>
+
+- Opção onde a ONG irá selecionar o pedido que deseja visualizar;
+- Caso o pedido esteja em aberto, é exibido informativo que o pedido está em aberto;
+- O relatório mostra os dados do produtor doador para o contato;
+- Será exibido também o endereço do produtor para a entrega.
+  
+  ![Gerar Relatórios ONG](https://user-images.githubusercontent.com/86797383/144769146-0dc2e7d1-f25a-47f1-bd75-e79cd2e33f92.jpg)
+
+
+
+
