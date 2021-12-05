@@ -30,6 +30,14 @@ Tela de cadastro Produtor:
 
 ![Cadastro Produtor](https://user-images.githubusercontent.com/86797383/144767856-246750ce-7983-4a2e-b281-5d952adf6d9d.jpg)
 
+Usuário Produtor -> Tela inicial do perfil Produtor:
+
+- Após o login do produtor, a tela com as funcionalidades do perfil do produtor serão exibidas;
+- Editar dados, onde produtor poderá editar seus dados, senha e endereço;
+- Gerar relatórios, onde será exibido os relatórios em aberto e/ou finalizados;
+- Informar hortaliças, onde produtor cadastrará as hortaliças e a opção atualizar hortaliças.  
+
+![Tela Inicial Produtor](https://user-images.githubusercontent.com/86797383/144767969-3eb06d03-81a8-45be-adc4-76c31398ef0a.jpg)
 
 
 Usuário Produtor -> Tela para informar hortaliças para doação:
