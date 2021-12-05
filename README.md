@@ -20,6 +20,16 @@ Tela inicial do sistema:
 ![Tela Principal](https://user-images.githubusercontent.com/86797383/144767574-672868c8-3ec8-497b-a9c4-7c2bd39528dc.jpg)
 
 
+Tela de cadastro Produtor:
+
+- Informações necessárias para o produtor efetuar o cadastro no sistema; 
+- Todas informações são obrigatórias;
+- Verificação do CPF;
+- Como login será utilizado o E-mail;
+- Os campos possuem restrição de digitação (Apenas números ou apenas letras).
+
+![Cadastro Produtor](https://user-images.githubusercontent.com/86797383/144767856-246750ce-7983-4a2e-b281-5d952adf6d9d.jpg)
+
 
 
 Usuário Produtor -> Tela para informar hortaliças para doação:
