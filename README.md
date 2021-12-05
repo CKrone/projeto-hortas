@@ -10,7 +10,7 @@ A ideia é minimizar os disperdícios de hortaliças produzidas em excesso nas h
 
 
 
-
+<h3>Telas do site desenvolvido</h3>
 
 
 Tela inicial do sistema:
@@ -59,3 +59,12 @@ Usuário Produtor -> Tela para informar hortaliças para doação:
 - Informar a unidade da hortaliça (Unidades, KG, Maço).
 
 ![Informar Hortaliças](https://user-images.githubusercontent.com/86797383/144767640-8d15017f-95e7-4700-b24e-981b0468b2e6.jpg)
+
+Usuário Produtor -> Tela para atualizar hortaliças:
+
+- Para não fazer um novo cadastro de uma hortaliça já doada, o produtor apenas seleciona a hortaliça que deseja novamente doar;
+- Atualiza seus dados, data de colheita, vencimento, quantidade e unidade;
+- Depois valida as informações.
+
+![Atualizar Hortaliças](https://user-images.githubusercontent.com/86797383/144768396-eceb2d65-827a-404e-b3ed-27489a489084.jpg)
+
