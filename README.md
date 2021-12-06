@@ -44,16 +44,16 @@ A ideia é minimizar os disperdícios de hortaliças produzidas em excesso nas h
 <h3>Usuário Produtor -> Tela para exibir relatórios:</h3>
 
 - Opção onde o produtor irá selecionar o pedido que deseja visualizar;
-- Caso o pedido esteja em aberto, é exibido a opção de finalizar o pedido após a entrega;
-- O relatório mostra os dados da ONG solicitante para o contato;
-- Será exibido também o endereço da ONG para a entrega.
+- Caso o pedido esteja em aberto, é exibido a opção de finalizar o pedido;
+- O relatório mostra os dados e o endereço da ONG solicitante;
+
 
 ![Relatórios Produtor](https://user-images.githubusercontent.com/86797383/144768169-20d1656f-cf0f-4e46-befd-50abfd8fcc87.jpg)
 
 
 <h3>Usuário Produtor -> Tela para informar hortaliças para doação:</h3>
 
-- O produtor irá informar o tipo de hortaliça que deseja doar;
+- O produtor irá informar o nome da hortaliça que deseja doar;
 - A data que foi feita a colheita;
 - A data estimada para o vencimento da hortaliça; 
 - A quantidade; 
@@ -63,7 +63,7 @@ A ideia é minimizar os disperdícios de hortaliças produzidas em excesso nas h
 
 <h3>Usuário Produtor -> Tela para atualizar hortaliças:</h3>
 
-- Para não fazer um novo cadastro de uma hortaliça já doada, o produtor apenas seleciona a hortaliça que deseja novamente doar;
+- Para não fazer um novo cadastro de uma hortaliça já doada, o produtor apenas seleciona a hortaliça que deseja doar novamente;
 - Atualiza seus dados, data de colheita, vencimento, quantidade e unidade;
 - Depois valida as informações.
 
@@ -76,6 +76,7 @@ A ideia é minimizar os disperdícios de hortaliças produzidas em excesso nas h
 - Todas informações são obrigatórias;
 - Verificação do CNPJ;
 - Como login será utilizado o E-mail;
+- Verificação se já existe um usuário com o mesmo e-mail;
 - Os campos possuem restrição de digitação (Apenas números ou apenas letras).
 
 ![Cadastro ONG](https://user-images.githubusercontent.com/86797383/144768882-7c164616-8b68-48fb-82ce-9956ca4b1f8e.jpg)
@@ -93,8 +94,7 @@ A ideia é minimizar os disperdícios de hortaliças produzidas em excesso nas h
 
 - Opção onde a ONG irá selecionar o pedido que deseja visualizar;
 - Caso o pedido esteja em aberto, é exibido informativo que o pedido está em aberto;
-- O relatório mostra os dados do produtor doador para o contato;
-- Será exibido também o endereço do produtor para a entrega.
+- O relatório mostra os dados e o endereço do produtor doador para o contato;
   
   ![Gerar Relatórios ONG](https://user-images.githubusercontent.com/86797383/144769146-0dc2e7d1-f25a-47f1-bd75-e79cd2e33f92.jpg)
 
