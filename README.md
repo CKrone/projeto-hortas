@@ -83,27 +83,27 @@ A ideia é minimizar os disperdícios de hortaliças produzidas em excesso nas h
 
 <h3>Usuário ONG -> Tela inicial do perfil da ONG:</h3>
   
- - Após o login da ONG, a tela com as funcionalidades do perfil do ONG serão exibidas;
+- Após o login da ONG, a tela com as funcionalidades do perfil do ONG serão exibidas;
 - Editar dados, onde a ONG poderá editar seus dados, senha e endereço;
 - Gerar relatórios, onde será exibido os relatórios em aberto e/ou finalizados;
 - Solicitar hortaliças, onde a ONG poderá visualizar os produtores e suas hortaliças.
   
-  ![Tela Inicial ONG](https://user-images.githubusercontent.com/86797383/144769007-1205ddca-e747-4466-89bc-3ebc8ab7b9d1.jpg)
+![Tela Inicial ONG](https://user-images.githubusercontent.com/86797383/144769007-1205ddca-e747-4466-89bc-3ebc8ab7b9d1.jpg)
   
-  <h3>Usuário ONG -> Tela para exibir relatórios:</h3>
+<h3>Usuário ONG -> Tela para exibir relatórios:</h3>
 
 - Opção onde a ONG irá selecionar o pedido que deseja visualizar;
 - Caso o pedido esteja em aberto, é exibido informativo que o pedido está em aberto;
 - O relatório mostra os dados e o endereço do produtor doador para o contato;
   
-  ![Gerar Relatórios ONG](https://user-images.githubusercontent.com/86797383/144769146-0dc2e7d1-f25a-47f1-bd75-e79cd2e33f92.jpg)
+![Gerar Relatórios ONG](https://user-images.githubusercontent.com/86797383/144769146-0dc2e7d1-f25a-47f1-bd75-e79cd2e33f92.jpg)
 
 
-  <h3>Usuário ONG -> Tela Solicitar Hortaliças:</h3>
+<h3>Usuário ONG -> Tela Solicitar Hortaliças:</h3>
   
-  - A ONG poderá visualizar os produtores disponíveis que já cadastraram hortaliças para doação;
-  - Escolhendo o produtor desejado, será exibido as hortaliças e suas informações;
-  - Por fim, a ONG fará a solicitação das hortaliças.
+- A ONG poderá visualizar os produtores disponíveis que já cadastraram hortaliças para doação;
+- Escolhendo o produtor desejado, será exibido as hortaliças e suas informações;
+- Por fim, a ONG fará a solicitação das hortaliças.
 
 
 ![Solicitar Hortaliças 1](https://user-images.githubusercontent.com/86797383/144814721-6e862430-923f-4516-9499-14bc58de4f00.jpg)
