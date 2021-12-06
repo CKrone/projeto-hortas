@@ -17,7 +17,7 @@ A ideia é minimizar os disperdícios de hortaliças produzidas em excesso nas h
 
 - É apresentado as funções iniciais para os usuários, cadastro e login.
 
-![Tela Principal](https://user-images.githubusercontent.com/86797383/144767574-672868c8-3ec8-497b-a9c4-7c2bd39528dc.jpg)
+![Tela Principal](https://user-images.githubusercontent.com/86797383/144811838-a9de18d2-bc70-4cc0-b417-6cdf01b9dd6f.jpg)
 
 
 <h3>Tela de cadastro Produtor:</h3>
