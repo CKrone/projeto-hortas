@@ -25,7 +25,8 @@ A ideia é minimizar os disperdícios de hortaliças produzidas em excesso nas h
 - Informações necessárias para o produtor efetuar o cadastro no sistema; 
 - Todas informações são obrigatórias;
 - Verificação do CPF;
-- Como login será utilizado o E-mail;
+- Como login, será utilizado o E-mail;
+- Verificação se já existe um usuário com o mesmo e-mail;
 - Os campos possuem restrição de digitação (Apenas números ou apenas letras).
 
 ![Cadastro Produtor](https://user-images.githubusercontent.com/86797383/144767856-246750ce-7983-4a2e-b281-5d952adf6d9d.jpg)
@@ -103,6 +104,10 @@ A ideia é minimizar os disperdícios de hortaliças produzidas em excesso nas h
   - A ONG poderá visualizar os produtores disponíveis que já cadastraram hortaliças para doação;
   - Escolhendo o produtor desejado, será exibido as hortaliças e suas informações;
   - Por fim, a ONG fará a solicitação das hortaliças.
+
+
+![Solicitar Hortaliças 1](https://user-images.githubusercontent.com/86797383/144809759-4c21bf7c-a6c8-4fff-8456-47d3e8fb18b1.jpg)
+
 
 ![Solicitar Hortaliças 2](https://user-images.githubusercontent.com/86797383/144769288-ec2a4288-6b4f-4ca2-929d-9904ea27448c.jpg)
 
