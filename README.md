@@ -63,6 +63,10 @@ A ideia é minimizar os disperdícios de hortaliças produzidas em excesso nas h
 
 <h3>Usuário Produtor -> Tela para atualizar hortaliças:</h3>
 
+- Através de um aviso da caixa modal, está opção é explicada para o usuário;
+
+![image](https://user-images.githubusercontent.com/86797383/145231057-c2609f5b-6fdd-4acf-b75c-522364f4da43.png)
+
 - Para não fazer um novo cadastro de uma hortaliça já doada, o produtor apenas seleciona a hortaliça que deseja doar novamente;
 - Atualiza seus dados, data de colheita, vencimento, quantidade e unidade;
 - Depois valida as informações.
