@@ -63,7 +63,7 @@ A ideia é minimizar os disperdícios de hortaliças produzidas em excesso nas h
 
 <h3>Usuário Produtor -> Tela para atualizar hortaliças:</h3>
 
-- Através de um aviso da caixa modal, está opção é explicada para o usuário;
+- Através de um aviso da caixa modal, está opção é explicada para o usuário ao clicar em Informar Hortaliças;
 
 ![image](https://user-images.githubusercontent.com/86797383/145231057-c2609f5b-6fdd-4acf-b75c-522364f4da43.png)
 
