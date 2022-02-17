@@ -1,7 +1,7 @@
 # projeto-hortas
 <h1>Projeto Web Site Hortas</h1>
 
-Projeto desenvolvido no terceiro semestre do curso técnico Desenvolvimento de Sistemas.
+Projeto desenvolvido no terceiro semestre do curso técnico Desenvolvimento de Sistemas, para utilizar os conhecimentos aprendidos no mesmo.
 O objetivo principal do site é intermediar a doação de hortaliças por parte de produtores das hortas comunitárias,
 permitindo que ONGs cadastradas façam a solicitação dessas hortaliças e repassaem para famílias com vulnerabilidade social.
 
